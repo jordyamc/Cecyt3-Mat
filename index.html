@@ -12,6 +12,12 @@
 @import url(http://fonts.googleapis.com/css?family=Archivo+Narrow);
 @import url(http://fonts.googleapis.com/css?family=Alegreya+Sans);
 @import url(http://fonts.googleapis.com/css?family=Roboto+Condensed);
+html{
+    overflow: hidden;
+}
+body{
+    overflow: hidden;
+}
 
 html,body,div[data-role="page"],.ui-content{
   height:100%;
@@ -20,12 +26,19 @@ html,body,div[data-role="page"],.ui-content{
   margin:0;
   text-shadow:none;
   font-family:'Roboto Condensed';
+  overflow: hidden;
 }
-#top-b,#header1,#search,#search1,#add-icon,#list-content,#content-bg,#num-img{
+/*.ui-content img{
+    position:relative;
+    z-index:1; 
+    height:25%;
+}*/
+#top-b,#header1,#search,#search1,#ui-prin,#add-icon,#list-content,#content-bg,#num-img{
   position:absolute;
   left:0;
   z-index:101;
   width:100%;
+  overflow: inherit;
 }
 #content-bg{
   background:#fff;
@@ -38,7 +51,8 @@ html,body,div[data-role="page"],.ui-content{
 }
 #header1{
   background: #6C1C41; 
-  box-shadow:0 1px 0 #b0120a; 
+  box-shadow:0 1px 0 #b0120a;
+  overflow: hidden;
   margin-bottom:0px;
   height:56px;
   color:#fff;
@@ -63,7 +77,6 @@ html,body,div[data-role="page"],.ui-content{
   overflow:hidden;
   background:#c9c9c9 ;
   top:64px;
-  bottom:0px;
 }
 #search paper-input{
   color:#c9c9c9;
@@ -103,10 +116,16 @@ html,body,div[data-role="page"],.ui-content{
   padding:0 30px;
   
 }
-#pal-links{
+#ui-prin{
+    box-sizing: border-box;
     overflow: hidden;
     position: absolute;
-    justify-content: center;
+    background: #c9c9c9;
+}
+#pal-links{
+    box-sizing: border-box;
+    overflow: hidden;
+    position: absolute;
 }
 #pal-links a{
     color: inherit;
@@ -740,10 +759,12 @@ tapHandler: function() {
 		}
         </script>
 
-<title>EZo App</title>
+<title>CECyT No. 3</title>
     </head>
-<body unresolved="" touch-action="auto"><!-- Page: home  -->
+<body unresolved="" touch-action="auto" ><!-- Page: home  -->
+    
     <div id="home" data-role="page">
+        
   <div role="main" class="ui-content">
     <div id="top-b"></div>
     <core-toolbar id="header1">
@@ -773,17 +794,32 @@ tapHandler: function() {
       </div>
         
     </core-toolbar>
-      <div id="search">
-    <center>
-      <img src="imagenes/LOGO_SEP.png" height="7%">
-      <img src="imagenes/LOGO_IPN.PNG" height="20%" align="top">
-    </center>
-      </div>
+    <p>&nbsp;</p>
+    <div data-role="content">
+	<center>
+	<img src="imagenes/LOGO_SEP.png" height="5%"><img src="imagenes/LOGO_IPN.PNG" height="5%">
+	</center>
+     <p><center>  
+      <a href="http://www.ipn.mx" target="_blank">IPN.MX  </a>
+	|
+      <a href="http://www.sidirtel.ipn.mx/" target="_blank" class="caso">Directorio Telef&oacute;nico IPN  </a>
+	|
+      <a href="http://mail.ipn.mx/" target="_blank">Correo electr&oacute;nico  </a>
+	|
+      <a href="http://ipn.mx/Paginas/Calendario_Escolar_IPN.aspx" target="_blank"> Calendario</a>
+      </p></center>			
+		<center>	
+		<blockquote><p><a href="http://www.cecyt3.ipn.mx/estudiantes/becas/becas.html" target="_blank"><img src="imagenes/becas.jpg" height="15%"></a>			
+		<a href="http://www.cecyt3.ipn.mx/estudiantes/serviciosocial/serviciosocial.html" target="_blank"><img src="imagenes/serviciosocial.jpg" height="15%"></a></p></blockquote>
+
+		<blockquote><p><a href="http://www.cecyt3.ipn.mx/estudiantes/titulacion/titulacionprofesional.html" target="blank"><img src="imagenes/titulacion.jpg" height="15%"></a>			
+		<a href="http://148.204.233.137/" target="blank"><img src="imagenes/saes.jpg" height="15%"></a></p></blockquote>
+		</center>
+		</div>
+      
   </div>
-  <div data-role="panel" id="menu" data-position="left" data-display="push">
- 
-  <!--<div role="sec" class="ui-content">-->
-  
+        
+  <div data-role="panel" id="menu" data-position="left" data-display="push">  
           <div role="menu" class="ui-content">
               <div id="top-b"></div>
 		<core-toolbar id="header1">
