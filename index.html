@@ -4,602 +4,8 @@
         <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, user-scalable=no">
 <link href="gk/lib/jquery.mobile/1.4.3/jquery.mobile-1.4.3.min.css" rel="stylesheet" type="text/css">
-<!-- Export CSS  -->
-<style>
-@import url(http://fonts.googleapis.com/css?family=BenchNine);
-@import url(http://fonts.googleapis.com/css?family=Poiret+One);
-@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
-@import url(http://fonts.googleapis.com/css?family=Archivo+Narrow);
-@import url(http://fonts.googleapis.com/css?family=Alegreya+Sans);
-@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed);
-html{
-    overflow: hidden;
-}
-body{
-    overflow: hidden;
-}
-
-html,body,div[data-role="page"],.ui-content{
-  height:100%;
-  width:100%;
-  padding:0;
-  margin:0;
-  text-shadow:none;
-  font-family:'Roboto Condensed';
-  overflow: hidden;
-}
-/*.ui-content img{
-    position:relative;
-    z-index:1; 
-    height:25%;
-}*/
-#top-b,#header1,#search,#search1,#ui-prin,#add-icon,#list-content,#content-bg,#num-img{
-  position:absolute;
-  left:0;
-  z-index:101;
-  width:100%;
-  overflow: inherit;
-}
-#content-bg{
-  background:#fff;
-  z-index:100;
-  top:220px;
-}
-#top-b{
-  height:8px;
-  background:#6C1C41;
-}
-#header1{
-  background: #6C1C41; 
-  box-shadow:0 1px 0 #b0120a;
-  overflow: hidden;
-  margin-bottom:0px;
-  height:56px;
-  color:#fff;
-  top:0px;
-}
-#header1 span{
-  margin-top:-7px;
-}
-#header1 paper-icon-button{
-  margin-top:-7px;
-  fill:#fff;
-}
-#header1 paper-icon-button{
-  margin:-7px -5px 0;
-  fill:#fff;
-}
-#search{
-  box-sizing:border-box;
-  border-bottom:1px solid #eee;
-  height:86%;
-  position:absolute;
-  overflow:hidden;
-  background:#c9c9c9 ;
-  top:64px;
-}
-#search paper-input{
-  color:#c9c9c9;
-  box-sizing:border-box;
-  border:none;
-  padding:0 30px;
-}
-#search paper-button{
-  background:#6C1C41;
-  box-sizing:border-box;
-  position:center;
-  border:none;
-  padding:0 30px;
-  
-}
-#search1{
-  box-sizing:border-box;
-  border-bottom:1px solid #eee;
-  height:86%;
-  position:absolute;
-  overflow:hidden;
-  background:#848484 ;
-  top:64px;
-  bottom:0px;
-}
-#search1 paper-input{
-  color:#848484;
-  box-sizing:border-box;
-  border:none;
-  padding:0 30px;
-}
-#search1 paper-button{
-  background:#6C1C41;
-  box-sizing:border-box;
-  position:center;
-  border:none;
-  padding:0 30px;
-  
-}
-#ui-prin{
-    box-sizing: border-box;
-    overflow: hidden;
-    position: absolute;
-    background: #c9c9c9;
-}
-#pal-links{
-    box-sizing: border-box;
-    overflow: hidden;
-    position: absolute;
-}
-#pal-links a{
-    color: inherit;
-    padding: auto;
-}
-#pal-links core-icon{
-    padding: 0 10px;
-}
-#pal-links paper-button{
-    background:#6C1C41;
-    box-sizing:padding-box;
-    border: none;
-    padding: auto;
-    text-align: center;
-    align-content: center;
-    height: inherit;
-    width: inherit;
-}
-#list-content{
-  position:absolute;
-  top:136px;
-}
-.list1{
-  height:70px;
-  width:100%;
-  font-size:15px;
-  border-bottom:1px solid #eee;
-  color:#555;
-  background:#fff;
-  position:absolute;
-  left:0;
-  -webkit-transition:color .2s,font-size .2s;
-}
-.list1:nth-child(1){
-  top:0px;
-}
-.list1:nth-child(2){
-  top:71px;
-}
-.list1:nth-child(3){
-  top:142px;
-}
-.list1:nth-child(4){
-  top:213px;
-}
-.list1:nth-child(5){
-  top:284px;
-}
-.list1 div{
-  width:40px;
-  height:40px;
-  margin:0 10px 0 10px;
-  border-radius:50px;
-  overflow:hidden;
-  background:#ddd;
-  border:3px solid #fff;
-}
-.list1 div img{
-  margin-left:-5px;
-  margin-top:5px;
-  height:50px;
-}
-#add-icon{
-  position:fixed;
-  bottom:15px;
-  right:15px;
-  background:#d01716;
-  width:40px;
-  left:auto;
-}
-
-#detail{
-  width:100%;
-  height:100%;
-  position:absolute;
-  top:0;
-  left:0;
-  z-index:99;
-  background:rgba(255,255,255,.9);
-}
-#detail-header{
-  background:rgba(0,0,0,0);
-  z-index:10;
-  display:;
-  position:relative;
-  top:0;
-  left:0;
-  height:50px;
-  padding:0;
-}
-#detail-header paper-icon-button{
-  fill:rgba(255,255,255,.2);
-  margin:-15px 6px 0 -5px;
-  -webkit-transform:scale(.5);
-}
-#detail-header paper-icon-button:first-child{
-  margin:-15px 6px 0 2px;
-  -webkit-transition:.4s .1s cubic-bezier(.61,1.81,.78,.75);
-}
-#detail-header paper-icon-button:nth-child(2){
-  -webkit-transition:.4s .2s cubic-bezier(.61,1.81,.78,.75);
-}
-#detail-header paper-icon-button:nth-child(3){
-  -webkit-transition:.4s .3s cubic-bezier(.61,1.81,.78,.75);
-}
-#detail-header paper-icon-button:nth-child(4){
-  -webkit-transition:.4s .4s cubic-bezier(.61,1.81,.78,.75);
-}
-#detail-header paper-icon-button:hover{
-  fill:rgba(255,255,255,1);
-}
-#banner{
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:200px;
-  overflow:hidden;
-  z-index:9;
-  opacity:1;
-  -webkit-transition:.2s;
-}
-#banner img{
-  width:100%;
-  height:100%;
-}
-#detail-item{
-  position:absolute;
-  top:180px;
-}
-#detail-item paper-item{
-  font-size:15px;
-  margin:10px 10px 0 15px;
-  width:100%;
-  height:50px;
-  opacity:0;
-}
-#detail-item paper-item b{
-  display:block;
-  width:60px;
-  font-weight:normal;
-}
-#detail-item paper-item:nth-child(1){
-  -webkit-transition:.2s .1s;
-}
-#detail-item paper-item:nth-child(2){
-  -webkit-transition:.2s .2s;
-}
-#detail-item paper-item:nth-child(3){
-  -webkit-transition:.2s .3s;
-}
-#detail-item paper-item:nth-child(4){
-  -webkit-transition:.2s .4s;
-}
-/*------------------------------------------*/
-
-/*!
-* jQuery Mobile 1.4.0
-* Git HEAD hash: f09aae0e035d6805e461a7be246d04a0dbc98f69 <> Date: Thu Dec 19 2013 17:34:22 UTC
-* http://jquerymobile.com
-*
-* Copyright 2010, 2013 jQuery Foundation, Inc. and other contributors
-* Released under the MIT license.
-* http://jquery.org/license
-*
-*/
-
-
-/* Globals */
-/* Font
------------------------------------------------------------------------------------------------------------*/
-html {
-	font-size: 100%;
-}
-body,
-input,
-select,
-textarea,
-button,
-.ui-btn {
-	font-size: 1em;
-	line-height: 1.3;
-	 font-family: sans-serif /*{global-font-family}*/;
-}
-legend,
-.ui-input-text input,
-.ui-input-search input {
-	color: inherit;
-	text-shadow: inherit;
-}
-/* Form labels (overrides font-weight bold in bars, and mini font-size) */
-.ui-mobile label,
-div.ui-controlgroup-label {
-	font-weight: normal;
-	font-size: 16px;
-}
-/* Separators
------------------------------------------------------------------------------------------------------------*/
-/* Field contain separator (< 28em) */
-.ui-field-contain {
-	border-bottom-color: #828282;
-	border-bottom-color: rgba(0,0,0,.15);
-	border-bottom-width: 1px;
-	border-bottom-style: solid;
-}
-/* Table opt-in classes: strokes between each row, and alternating row stripes */
-/* Classes table-stroke and table-stripe are deprecated in 1.4. */
-.table-stroke thead th,
-.table-stripe thead th,
-.table-stripe tbody tr:last-child {
-	border-bottom: 1px solid #d6d6d6; /* non-RGBA fallback */
-	border-bottom: 1px solid rgba(0,0,0,.1);
-}
-.table-stroke tbody th,
-.table-stroke tbody td {
-	border-bottom: 1px solid #e6e6e6; /* non-RGBA fallback  */
-	border-bottom: 1px solid rgba(0,0,0,.05);
-}
-.table-stripe.table-stroke tbody tr:last-child th,
-.table-stripe.table-stroke tbody tr:last-child td {
-	border-bottom: 0;
-}
-.table-stripe tbody tr:nth-child(odd) td,
-.table-stripe tbody tr:nth-child(odd) th {
-	background-color: #eeeeee; /* non-RGBA fallback  */
-	background-color: rgba(0,0,0,.04);
-}
-/* Buttons
------------------------------------------------------------------------------------------------------------*/
-.ui-btn,
-label.ui-btn {
-	font-weight: bold;
-	border-width: 1px;
-	border-style: solid;
-}
-.ui-btn:link {
-	text-decoration: none !important;
-}
-.ui-btn-active {
-	cursor: pointer;
-}
-/* Corner rounding
------------------------------------------------------------------------------------------------------------*/
-/* Class ui-btn-corner-all deprecated in 1.4 */
-.ui-corner-all {
-	-webkit-border-radius: .6em /*{global-radii-blocks}*/;
-	border-radius: .6em /*{global-radii-blocks}*/;
-}
-/* Buttons */
-.ui-btn-corner-all,
-.ui-btn.ui-corner-all,
-/* Slider track */
-.ui-slider-track.ui-corner-all,
-/* Flipswitch */
-.ui-flipswitch.ui-corner-all,
-/* Count bubble */
-.ui-li-count {
-	-webkit-border-radius: .3125em /*{global-radii-buttons}*/;
-	border-radius: .3125em /*{global-radii-buttons}*/;
-}
-/* Icon-only buttons */
-.ui-btn-icon-notext.ui-btn-corner-all,
-.ui-btn-icon-notext.ui-corner-all {
-	-webkit-border-radius: 1em;
-	border-radius: 1em;
-}
-/* Radius clip workaround for cleaning up corner trapping */
-.ui-btn-corner-all,
-.ui-corner-all {
-	-webkit-background-clip: padding;
-	background-clip: padding-box;
-}
-/* Popup arrow */
-.ui-popup.ui-corner-all > .ui-popup-arrow-guide {
-	left: .6em /*{global-radii-blocks}*/;
-	right: .6em /*{global-radii-blocks}*/;
-	top: .6em /*{global-radii-blocks}*/;
-	bottom: .6em /*{global-radii-blocks}*/;
-}
-/* Shadow
------------------------------------------------------------------------------------------------------------*/
-.ui-shadow {
-	-webkit-box-shadow: 0 1px 3px /*{global-box-shadow-size}*/ rgba(0,0,0,.2) /*{global-box-shadow-color}*/;
-	-moz-box-shadow: 0 1px 3px /*{global-box-shadow-size}*/ rgba(0,0,0,.2) /*{global-box-shadow-color}*/;
-	box-shadow: 0 1px 3px /*{global-box-shadow-size}*/ rgba(0,0,0,.2) /*{global-box-shadow-color}*/;
-}
-.ui-shadow-inset {
-	-webkit-box-shadow: inset 0 1px 3px /*{global-box-shadow-size}*/ rgba(0,0,0,.2) /*{global-box-shadow-color}*/;
-	-moz-box-shadow: inset 0 1px 3px /*{global-box-shadow-size}*/ rgba(0,0,0,.2) /*{global-box-shadow-color}*/;
-	box-shadow: inset 0 1px 3px /*{global-box-shadow-size}*/ rgba(0,0,0,.2) /*{global-box-shadow-color}*/;
-}
-.ui-overlay-shadow {
-	-webkit-box-shadow: 0 0 12px 		rgba(0,0,0,.6);
-	-moz-box-shadow: 0 0 12px 			rgba(0,0,0,.6);
-	box-shadow: 0 0 12px 				rgba(0,0,0,.6);
-}
-/* Icons
------------------------------------------------------------------------------------------------------------*/
-.ui-btn-icon-left:after,
-.ui-btn-icon-right:after,
-.ui-btn-icon-top:after,
-.ui-btn-icon-bottom:after,
-.ui-btn-icon-notext:after {
-	background-color: #666666 /*{global-icon-color}*/;
-	background-color: rgba(0,0,0,.3) /*{global-icon-disc}*/;
-	background-position: center center;
-	background-repeat: no-repeat;
-	-webkit-border-radius: 1em;
-	border-radius: 1em;
-}
-/* Alt icons */
-.ui-alt-icon.ui-btn:after,
-.ui-alt-icon .ui-btn:after,
-html .ui-alt-icon.ui-checkbox-off:after,
-html .ui-alt-icon.ui-radio-off:after,
-html .ui-alt-icon .ui-checkbox-off:after,
-html .ui-alt-icon .ui-radio-off:after {
-	background-color: #666666 /*{global-icon-color}*/;
-	background-color: 					rgba(0,0,0,.15);
-}
-/* No disc */
-.ui-nodisc-icon.ui-btn:after,
-.ui-nodisc-icon .ui-btn:after {
-	background-color: transparent;
-}
-/* Icon shadow */
-.ui-shadow-icon.ui-btn:after,
-.ui-shadow-icon .ui-btn:after {
-	-webkit-box-shadow: 0 1px 0 rgba(255,255,255,.3) /*{global-icon-shadow}*/;
-	-moz-box-shadow: 0 1px 0 rgba(255,255,255,.3) /*{global-icon-shadow}*/;
-	box-shadow: 0 1px 0 rgba(255,255,255,.3) /*{global-icon-shadow}*/;
-}
-/* Checkbox and radio */
-.ui-btn.ui-checkbox-off:after,
-.ui-btn.ui-checkbox-on:after,
-.ui-btn.ui-radio-off:after,
-.ui-btn.ui-radio-on:after {
-	display: block;
-	width: 18px;
-	height: 18px;
-	margin: -9px 2px 0 2px;
-}
-.ui-checkbox-off:after,
-.ui-btn.ui-radio-off:after {
-	filter: Alpha(Opacity=30);
-	opacity: .3;
-}
-.ui-btn.ui-checkbox-off:after,
-.ui-btn.ui-checkbox-on:after {
-	-webkit-border-radius: .1875em;
-	border-radius: .1875em;
-}
-.ui-radio .ui-btn.ui-radio-on:after {
-	background-image: none;
-	background-color: #fff;
-	width: 8px;
-	height: 8px;
-	border-width: 5px;
-	border-style: solid; 
-}
-.ui-alt-icon.ui-btn.ui-radio-on:after,
-.ui-alt-icon .ui-btn.ui-radio-on:after {
-	background-color: #000;
-}
-/* Loader */
-.ui-icon-loading {
-	background: url(images/ajax-loader.gif);
-	background-size: 2.875em 2.875em;
-}
-.ui-bar-a,.ui-page-theme-a 
-.ui-bar-inherit,html 
-.ui-bar-a .ui-bar-inherit,html 
-.ui-body-a 
-.ui-bar-inherit,html body 
-.ui-group-theme-a 
-.ui-bar-inherit{
-    background:#6C1C41 ;
-    border-color:#6C1C41 ;
-    color:#ffffff ;
-    text-shadow:0  1px  0  #444444 ;
-    font-weight:bold;
-}
-.ui-bar-a{
-    border-width:1px;
-    border-style:solid;
-}
-.ui-overlay-a,.ui-page-theme-a,.ui-page-theme-a 
-.ui-panel-wrapper{
-    background:#c9c9c9 ;
-    border-color:#c9c9c9 ;
-    color:#000000 ;
-    text-shadow:0  1px  0  #eeeeee ;
-}
-.ui-body-a,.ui-page-theme-a .ui-body-inherit,html .ui-bar-a 
-.ui-body-inherit,html 
-.ui-body-a 
-.ui-body-inherit,html body 
-.ui-group-theme-a 
-.ui-body-inherit,html 
-    
-.ui-panel-page-container-a{
-    background:#848484 ;
-    border-color:#848484 ;
-    color:#ffffff ;
-    text-shadow:0  1px  0  #444444 ;
-}
-    
-.ui-body-a{
-    border-width:1px;
-    border-style:solid;
-}
-.ui-page-theme-a a,html 
-.ui-bar-a a,html 
-.ui-body-a a,html body 
-    
-.ui-group-theme-a a{
-    color:#ffffff ;
-    font-weight:bold;
-}
-    
-.ui-page-theme-a a:visited,html 
-.ui-bar-a a:visited,html 
-.ui-body-a a:visited,html body 
-.ui-group-theme-a a:visited{   
-    color:#7c750e ;
-}
-    
-.ui-page-theme-a a:hover,html 
-.ui-bar-a a:hover,html 
-.ui-body-a a:hover,html body 
-.ui-group-theme-a a:hover{
-    color:#dcce19 ;
-}
-    
-.ui-page-theme-a a:active,html 
-.ui-bar-a a:active,html 
-.ui-body-a a:active,html body 
-.ui-group-theme-a a:active{
-    color:#c0b416 ;
-}
-.ui-page-theme-a 
-.ui-btn,html 
-.ui-bar-a 
-.ui-btn,html
-.ui-body-a .ui-btn,html body .ui-group-theme-a 
-.ui-btn,html head + body 
-.ui-btn.ui-btn-a,.ui-page-theme-a 
-    .ui-btn:visited,html 
-    .ui-bar-a .ui-btn:visited,html 
-    .ui-body-a .ui-btn:visited,html body 
-    .ui-group-theme-a .ui-btn:visited,html head + body 
-    .ui-btn.ui-btn-a:visited{
-        background:#6C1C41 ;
-        border-color:#6C1C41 ;
-        color:#ffffff ;
-        text-shadow:0  1px  0  #444444 ;
-    }
-    .ui-page-theme-a 
-    .ui-btn:hover,html 
-    .ui-bar-a 
-    .ui-btn:hover,html 
-    .ui-body-a 
-    .ui-btn:hover,html body 
-    .ui-group-theme-a 
-    .ui-btn:hover,html head + body 
-    .ui-btn.ui-btn-a:hover{
-        background:#ba2429 ;
-        border-color:#FF3239 ;
-        color:#ffffff ;
-        text-shadow:0  1px  0  #444444 ;
-    }
-    .ui-page-theme-a 
-    .ui-btn:active,html .ui-bar-a .ui-btn:active,html .ui-body-a .ui-btn:active,html body .ui-group-theme-a .ui-btn:active,html head + body .ui-btn.ui-btn-a:active{background:#ba2429 ;border-color:#FF3239 ;color:#ffffff ;text-shadow:0  1px  0  #444444 ;}.ui-page-theme-a .ui-btn.ui-btn-active,html .ui-bar-a .ui-btn.ui-btn-active,html .ui-body-a .ui-btn.ui-btn-active,html body .ui-group-theme-a .ui-btn.ui-btn-active,html head + body .ui-btn.ui-btn-a.ui-btn-active,.ui-page-theme-a .ui-checkbox-on:after,html .ui-bar-a .ui-checkbox-on:after,html .ui-body-a .ui-checkbox-on:after,html body .ui-group-theme-a .ui-checkbox-on:after,.ui-btn.ui-checkbox-on.ui-btn-a:after,.ui-page-theme-a .ui-flipswitch-active,html .ui-bar-a .ui-flipswitch-active,html .ui-body-a .ui-flipswitch-active,html body .ui-group-theme-a .ui-flipswitch-active,html body .ui-flipswitch.ui-bar-a.ui-flipswitch-active,.ui-page-theme-a .ui-slider-track .ui-btn-active,html .ui-bar-a .ui-slider-track .ui-btn-active,html .ui-body-a .ui-slider-track .ui-btn-active,html body .ui-group-theme-a .ui-slider-track .ui-btn-active,html body div.ui-slider-track.ui-body-a .ui-btn-active{background-color:#d5a515 ;border-color:#755a0b ;color:#ffffff ;text-shadow:0  1px  0  #444444 ;}.ui-page-theme-a .ui-radio-on:after,html .ui-bar-a .ui-radio-on:after,html .ui-body-a .ui-radio-on:after,html body .ui-group-theme-a .ui-radio-on:after,.ui-btn.ui-radio-on.ui-btn-a:after{border-color:#d5a515 ;}.ui-page-theme-a .ui-btn:focus,html .ui-bar-a .ui-btn:focus,html .ui-body-a .ui-btn:focus,html body .ui-group-theme-a .ui-btn:focus,html head + body .ui-btn.ui-btn-a:focus,.ui-page-theme-a .ui-focus,html .ui-bar-a .ui-focus,html .ui-body-a .ui-focus,html body .ui-group-theme-a .ui-focus,html head + body .ui-btn-a.ui-focus,html head + body .ui-body-a.ui-focus{-webkit-box-shadow:0 0 12px #d5a515 ;-moz-box-shadow:0 0 12px #d5a515 ;box-shadow:0 0 12px #d5a515 ;}.ui-disabled,.ui-state-disabled,button[disabled],.ui-select .ui-btn.ui-state-disabled{filter:Alpha(Opacity=30);opacity:.3;cursor:default !important;pointer-events:none;}.ui-btn:focus,.ui-btn.ui-focus{outline:0;}.ui-noboxshadow .ui-shadow,.ui-noboxshadow .ui-shadow-inset,.ui-noboxshadow .ui-overlay-shadow,.ui-noboxshadow .ui-shadow-icon.ui-btn:after,.ui-noboxshadow .ui-shadow-icon .ui-btn:after,.ui-noboxshadow .ui-focus,.ui-noboxshadow .ui-btn:focus,.ui-noboxshadow  input:focus,.ui-noboxshadow .ui-panel{-webkit-box-shadow:none !important;-moz-box-shadow:none !important;box-shadow:none !important;}.ui-noboxshadow .ui-btn:focus,.ui-noboxshadow .ui-focus{outline-width:1px;outline-style:auto;}
-        </style><!-- Load Polymer elements  -->
+<link rel="stylesheet" href="estilo.css" />
+<!-- Load Polymer elements  -->
 <script src="components/platform/platform.js"></script>
 <link rel="import" href="components/core-icons/core-icons.html">
 <link rel="import" href="components/paper-icon-button/paper-icon-button.html">
@@ -610,159 +16,11 @@ html .ui-alt-icon .ui-radio-off:after {
 <link rel="import" href="components/paper-button/paper-button.html">
 <script src="jquery-1.9.1.min.js"></script>
 <script src="mobile/1.4.3/jquery.mobile-1.4.3.min.js"></script><!-- Uncomment the following to include cordova in your android project --><!--<script src="http://jqmdesigner.appspot.com/platforms/android/cordova.js"></script>--><!-- Export JS  -->
-<script>
-(function () {
-  $(document).on('pageinit', '#home', function () {
-    var itemy;
-    $('#content-bg').css({
-      'height': ($('#home').height() - 220) + 'px'
-    });
-    $('.list1').on('click', function () {
-      $(this).attr('show-this', 'true');
-      itemy = $(this).offset().top;
-
-      $('#top-b').fadeIn(250).animate({
-        'margin-top': '-10px'
-      }, {
-        duration: 250,
-        queue: false
-      });
-      $('#header1').fadeOut(250).animate({
-        'margin-top': '-10px'
-      }, {
-        duration: 250,
-        queue: false
-      });
-      $('#content-bg').fadeOut(250);
-      setTimeout(function () {
-        $('#search').fadeOut(250).animate({
-          'margin-top': '-10px'
-        }, {
-          duration: 250,
-          queue: false
-        });
-      }, 20);
-      setTimeout(function () {
-        $('#list-content .list1').not('.list1[show-this=true]').fadeOut(250).animate({
-          'margin-top': '-10px'
-        }, {
-          duration: 250,
-          queue: false
-        });
-        $('.list1[show-this=true]').animate({
-          'top': '-45px'
-        }, 250).css({
-          'background': 'rgba(0,0,0,.2)',
-          'color': '#fff',
-          'font-size': '20px'
-        });
-      }, 40);
-      setTimeout(function () {
-        $('#add-icon').fadeOut(250).animate({
-          'bottom': '0px',
-        }, {
-          duration: 250,
-          queue: false
-        });
-      }, 60);
-
-      $('#banner').css({
-        'top': '-40px',
-        'opacity': '1'
-      });
-
-      $('#detail-item paper-item').css({
-        'margin-top': '0px',
-        'opacity': '1'
-      });
-
-      $('#detail-header paper-icon-button').css({
-        '-webkit-transform': 'scale(1)',
-        'fill': 'rgba(255,255,255,.7)'
-      });
-    });
-
-    //detail button
-
-    $('#back-btn').on('click', function () {
-
-      $('#top-b').fadeIn(250).animate({
-        'margin-top': '0px'
-      }, {
-        duration: 250,
-        queue: false
-      });
-      $('#header1').fadeIn(250).animate({
-        'margin-top': '0px'
-      }, {
-        duration: 250,
-        queue: false
-      });
-      $('#content-bg').fadeIn(250);
-      setTimeout(function () {
-        $('#search').fadeIn(250).animate({
-          'margin-top': '0px'
-        }, {
-          duration: 250,
-          queue: false
-        });
-      }, 20);
-      setTimeout(function () {
-        $('#list-content .list1').fadeIn(250).animate({
-          'margin-top': '0px'
-        }, {
-          duration: 250,
-          queue: false
-        });
-        $('.list1[show-this=true]').animate({
-          'top': (itemy - 136) + 'px'
-        }, 250);
-        $('.list1').removeAttr('show-this').css({
-          'background': 'rgba(0,0,0,0)',
-          'color': '#333',
-          'font-size': '15px'
-        });
-      }, 40);
-      setTimeout(function () {
-        $('.list1').removeAttr('show-this').css({
-          'background': 'rgba(255,255,255,1)'
-        });
-      }, 50);
-      setTimeout(function () {
-        $('#add-icon').fadeIn(250).animate({
-          'bottom': '15px'
-        }, {
-          duration: 250,
-          queue: false
-        });
-      }, 60);
-
-      $('#banner').css({
-        'top': '0',
-        'opacity': '0'
-      });
-
-      $('#detail-item paper-item').css({
-        'margin-top': '10px',
-        'opacity': '0'
-      });
-
-      $('#detail-header paper-icon-button').css({
-        '-webkit-transform': 'scale(.5)',
-        'fill': 'rgba(255,255,255,.2)'
-      });
-    });
-  });
-})();
-tapHandler: function() {
-			this.$.dialog.toggle();
-		}
-        </script>
-
+<script src="scripts.js"></script>
 <title>CECyT No. 3</title>
     </head>
-<body unresolved="" touch-action="auto" ><!-- Page: home  -->
     
+<body unresolved="" touch-action="auto" ><!-- Page: home  -->
     <div id="home" data-role="page">
         
   <div role="main" class="ui-content">
@@ -774,8 +32,40 @@ tapHandler: function() {
       <span flex="">CECyT No. 3</span>
       <a href="#popu" data-rel="popup" data-position-to="window" data-transition="pop">
         <paper-icon-button icon="info" role="button" tabindex="0" href="#info" aria-label="info" on-tap="pop"></paper-icon-button>
-      </a>       
-      
+      </a>      
+        
+    </core-toolbar>
+    <p>&nbsp;</p>
+    <div data-role="content">
+        <div id="img-enc">
+	<center>
+	<img src="imagenes/LOGO_SEP.png" height="5%"><img src="imagenes/LOGO_IPN.PNG" height="5%">
+	</center>
+        </div>
+     <p><center>  
+      <a href="http://www.ipn.mx" target="_blank">IPN.MX  </a>
+	|
+      <a href="http://www.sidirtel.ipn.mx/" target="_blank" class="caso">Directorio Telef&oacute;nico IPN  </a>
+	|
+      <a href="http://mail.ipn.mx/" target="_blank">Correo electr&oacute;nico  </a>
+	|
+      <a href="http://ipn.mx/Paginas/Calendario_Escolar_IPN.aspx" target="_blank"> Calendario</a>
+      </p></center>	
+      <div id="imgs">
+		<center>	
+		<blockquote><p><a href="http://www.cecyt3.ipn.mx/estudiantes/becas/becas.html" target="_blank"><img src="imagenes/becas.jpg" height="10%"></a>			
+		<a href="http://www.cecyt3.ipn.mx/estudiantes/serviciosocial/serviciosocial.html" target="_blank"><img src="imagenes/serviciosocial.jpg" height="10%"></a></p></blockquote>
+
+		<blockquote><p><a href="http://www.cecyt3.ipn.mx/estudiantes/titulacion/titulacionprofesional.html" target="blank"><img src="imagenes/titulacion.jpg" height="15%"></a>			
+		<a href="http://148.204.233.137/" target="blank"><img src="imagenes/saes.jpg" height="15%"></a></p></blockquote>
+		</center>
+		</div>
+      </div>
+      <div data-role="footer">
+		<h3>&nbsp;</h3>
+		</div>
+  </div>
+<!-- POPUP -->
         <div data-role="popup" id="popu" data-overlay-theme="b" data-theme="b" data-dismissible="false" style="max-width:400px;" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b">
         <div data-role="header" data-theme="a">
         <h1>Info</h1>   
@@ -787,41 +77,15 @@ tapHandler: function() {
           <p>Tel. 57296000 ext 74004</p>
           <p>cecyt3@ipn.mx</p>
           <p>&nbsp;</p>
-            <p>Creador:</p>
-          <p>Jordy Alexis mendoza Caballero</p>
+            <p>Creadores:</p>
+          <p>Jordy Mendoza|Ideas|Diseño|Programacion|</p>
           <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">OK</a>
         </div>
       </div>
-        
-    </core-toolbar>
-    <p>&nbsp;</p>
-    <div data-role="content">
-	<center>
-	<img src="imagenes/LOGO_SEP.png" height="5%"><img src="imagenes/LOGO_IPN.PNG" height="5%">
-	</center>
-     <p><center>  
-      <a href="http://www.ipn.mx" target="_blank">IPN.MX  </a>
-	|
-      <a href="http://www.sidirtel.ipn.mx/" target="_blank" class="caso">Directorio Telef&oacute;nico IPN  </a>
-	|
-      <a href="http://mail.ipn.mx/" target="_blank">Correo electr&oacute;nico  </a>
-	|
-      <a href="http://ipn.mx/Paginas/Calendario_Escolar_IPN.aspx" target="_blank"> Calendario</a>
-      </p></center>			
-		<center>	
-		<blockquote><p><a href="http://www.cecyt3.ipn.mx/estudiantes/becas/becas.html" target="_blank"><img src="imagenes/becas.jpg" height="15%"></a>			
-		<a href="http://www.cecyt3.ipn.mx/estudiantes/serviciosocial/serviciosocial.html" target="_blank"><img src="imagenes/serviciosocial.jpg" height="15%"></a></p></blockquote>
+<!-- /POPUP -->
 
-		<blockquote><p><a href="http://www.cecyt3.ipn.mx/estudiantes/titulacion/titulacionprofesional.html" target="blank"><img src="imagenes/titulacion.jpg" height="15%"></a>			
-		<a href="http://148.204.233.137/" target="blank"><img src="imagenes/saes.jpg" height="15%"></a></p></blockquote>
-		</center>
-		</div>
-      <div data-role="footer">
-		<h3>&nbsp;</h3>
-		</div>
-  </div>
-        
-  <div data-role="panel" id="menu" data-position="left" data-display="push">  
+<!-- PANEL -->
+  <div data-role="panel" id="menu" data-position="left" data-display="overlay">  
           <div role="menu" class="ui-content">
               <div id="top-b"></div>
 		<core-toolbar id="header1">
@@ -830,38 +94,905 @@ tapHandler: function() {
       </a>
       <span flex="">MENU</span>
           </core-toolbar>
-    <div id="pal-links">
-        <p>&nbsp;</p>
-      <a href="#avisos"><paper-button raised><core-icon icon="arrow-forward"></core-icon>BOTON</paper-button></a>
-		<a href="#menu-con" data-role="button" data-icon="arrow-r" data-theme="a" data-transition="slidedown">CONOCENOS</a>
-		<a href="#oferta" data-role="button" data-icon="arrow-r" data-theme="a" data-transition="slidedown">OFERTA EDUCATIVA</a>
-		<a href="#estudiantes" data-role="button" data-icon="arrow-r" data-theme="a" data-transition="slidedown">ESTUDIANTES</a>
-		<a href="http://www.cecyt3.ipn.mx/egresados/index.html" data-role="button" data-icon="arrow-r" data-theme="a" data-transition="slidedown" target="blank">EGRESADOS</a>
-		<a href="http://www.cecyt3.ipn.mx/investigacion/index.html" data-role="button" data-icon="arrow-r" data-theme="a" data-transition="slidedown" target="blank">INVESTIGACION</a>
-		<a href="http://www.cecyt3.ipn.mx/servicios/index.html" data-role="button" data-icon="arrow-r" data-theme="a" data-transition="slidedown" target="blank">SERVICIOS</a>
-		<a href="http://www.cecyt3.ipn.mx/gestiondecalidad/index.html" data-role="button" data-icon="arrow-r" data-theme="a" data-transition="slidedown" target="blank">GESTION DE CALIDAD</a>
-      </div>
-              </div>
-		</div>
-      
-      
-      
-      
-   <!--<div id="top-b"></div>
-  <core-toolbar id="header1">
-    <a href="#main" data-rel="close">
-        </a>
-    <span flex="">MENU</span>
-  </core-toolbar>
-    <div id="search1">
-    <core-menu selected="0" on-core-select="{{selectAction}}">
-  <core-item icon="settings" label="Settings"></core-item>
-  <core-item icon="dialog" label="Dialog"></core-item>
-  <core-item icon="search" label="Search"></core-item>
-</core-menu>
-    </div>-->
-    
-  </div>
-  </div>
+<div id="pal-links">
+    <p>&nbsp;</p>
+    <a href="#home" data-rel="close"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">HOME</td></tr></table></paper-button></a>
+    <a href="#avisos" data-transition="slidedown"><paper-button raised><table border=0><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">AVISOS</td></tr></table></paper-button></a>
+    <a href="#menu-con" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">CONOCENOS</td></tr></table></paper-button></a>
+    <a href="#oferta" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">OFERTA EDUCATIVA</td></tr></table></paper-button></a>
+    <a href="#estudiantes" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">ESTUDIANTES</td></tr></table></paper-button></a>
+    <a href="http://www.cecyt3.ipn.mx/egresados/index.html"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">EGRESADOS</td></tr></table></paper-button></a>
+    <a href="http://www.cecyt3.ipn.mx/investigacion/index.html"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">INVESTIGACION</td></tr></table></paper-button></a>
+    <a href="http://www.cecyt3.ipn.mx/servicios/index.html"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">SERVICIOS</td></tr></table></paper-button></a>
+    <a href="http://www.cecyt3.ipn.mx/gestiondecalidad/index.html"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">CALIDAD</td></tr></table></paper-button></a>
 </div>
+</div>
+</div>
+<! ------>
+		<div data-role="panel" id="menu-con" data-position="left" data-display="overlay">
+		<div role="menu" class="ui-content">
+              <div id="top-b"></div>
+		<core-toolbar id="header1">
+      <a href="#menu">
+        <paper-icon-button icon="arrow-back" role="button" tabindex="0" aria-label="menu"></paper-icon-button>
+      </a>
+      <span flex="">CONOCENOS</span>
+      <a href="#" data-rel="close" data-position-to="window" data-transition="pop">
+        <paper-icon-button icon="close" role="button" tabindex="0" href="#info" aria-label="info"></paper-icon-button>
+      </a>               
+    </core-toolbar>
+<div id="pal-links">
+    <p>&nbsp;</p>
+		<a href="#historia" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="history"></core-icon></td><td align="center">HISTORIA</td></tr></table></paper-button></a>
+		<a href="#organigrama" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="account-circle"></core-icon></td><td align="center">ORGANIGRAMA</td></tr></table></paper-button></a>
+		<a href="#ubicacion" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="room"></core-icon></td><td align="center">UBICACION</td></tr></table></paper-button></a>
+		<a href="#galeria" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="perm-media"></core-icon></td><td align="center">GALERIA</td></tr></table></paper-button></a>
+</div>
+</div>
+</div>
+<! ------>
+        <div data-role="panel" id="oferta" data-position="left" data-display="overlay">
+		<div role="menu" class="ui-content">
+              <div id="top-b"></div>
+		<core-toolbar id="header1">
+      <a href="#menu">
+        <paper-icon-button icon="arrow-back" role="button" tabindex="0" aria-label="menu"></paper-icon-button>
+      </a>
+      <span flex="">OFERTA</span>
+      <a href="#" data-rel="close" data-position-to="window" data-transition="pop">
+        <paper-icon-button icon="close" role="button" tabindex="0" href="#info" aria-label="info"></paper-icon-button>
+      </a>               
+    </core-toolbar>
+<div id="pal-links">
+    <p>&nbsp;</p>
+		<a href="#digital" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">DIGITALES</td></tr></table></paper-button></a>
+		<a href="#computacion" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">COMPUTACION</td></tr></table></paper-button></a>
+		<a href="#control" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">CONTROL</td></tr></table></paper-button></a>
+		<a href="#mac" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">MAC</td></tr></table></paper-button></a>
+        <a href="#aeronautica" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">AERONAUTICA</td></tr></table></paper-button></a>
+        <a href="#automotriz" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">AUTOMOTRIZ</td></tr></table></paper-button></a>
+		</div>
+            </div>
+</div>
+    <!-- /PANEL -->
+</div>
+    <!-- /HOME -->
+
+    
+    <!-- Avisos -->
+<div data-role="page" id="avisos">
+    <div id="top-b"></div>
+    <core-toolbar id="header1">
+      <a href="#menu">
+        <paper-icon-button icon="menu" role="button" tabindex="0" aria-label="menu"></paper-icon-button>
+      </a>
+      <span flex="">Avisos</span>               
+    </core-toolbar>
+    <p>&nbsp;</p>
+    <div data-role="content">
+
+		<center><a href="http://www.cecyt3.ipn.mx/avisos/gruposalternos/grupos-alternos.html" target="blank"><img src="http://www.cecyt3.ipn.mx/avisos/gruposalternos/ALTERNOS.png"></a>
+		<p><a href="http://www.cecyt3.ipn.mx/avisos/GrupoProvisional-15-1/grupo-provisional.html" target="blank"><img src="http://www.cecyt3.ipn.mx/avisos/GrupoProvisional-15-1/avisoProvisional.png"></a></p>
+		<p><a href="http://www.cecyt3.ipn.mx/avisos/horarios/horarios.html" target="blank"><img src="http://www.cecyt3.ipn.mx/avisos/horarios/horarios.png"></a></p>
+        <p><a href="http://www.cecyt3.ipn.mx/avisos/NUEVO-INGRESO/ingreso20132014.html" target="blank"><img src="http://www.cecyt3.ipn.mx/avisos/NUEVO-INGRESO/NUEVOINGRESO.png"></a></p>
+        <p><a href="http://www.cecyt3.ipn.mx/estudiantes/PRESTADORES%20QUE%20NO%20HAN%20REQUISITADO%20LIBERACION%20DE%20S.S..pdf" target="blank"><img src="http://www.cecyt3.ipn.mx/estudiantes/pendientesserviciosocial.png"></a></p>
+		<p><a href="http://www.nctech.com.mx/cecyt3" target="blank"><img src="imagenes/avisos/ntech.gif"></a></p></center>
+		</div>
+
+<!-- PANEL -->
+  <div data-role="panel" id="menu" data-position="left" data-display="overlay">  
+          <div role="menu" class="ui-content">
+              <div id="top-b"></div>
+		<core-toolbar id="header1">
+      <a href="#main" data-rel="close">
+        <paper-icon-button icon="close" role="button" tabindex="0" aria-label="menu"></paper-icon-button>
+      </a>
+      <span flex="">MENU</span>
+          </core-toolbar>
+<div id="pal-links">
+    <p>&nbsp;</p>
+    <a href="#home" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">HOME</td></tr></table></paper-button></a>
+    <a href="#avisos" data-transition="slidedown" data-rel="close"><paper-button raised><table border=0><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">AVISOS</td></tr></table></paper-button></a>
+    <a href="#menu-con"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">CONOCENOS</td></tr></table></paper-button></a>
+    <a href="#oferta" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">OFERTA EDUCATIVA</td></tr></table></paper-button></a>
+    <a href="#estudiantes" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">ESTUDIANTES</td></tr></table></paper-button></a>
+    <a href="http://www.cecyt3.ipn.mx/egresados/index.html"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">EGRESADOS</td></tr></table></paper-button></a>
+    <a href="http://www.cecyt3.ipn.mx/investigacion/index.html"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">INVESTIGACION</td></tr></table></paper-button></a>
+    <a href="http://www.cecyt3.ipn.mx/servicios/index.html"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">SERVICIOS</td></tr></table></paper-button></a>
+    <a href="http://www.cecyt3.ipn.mx/gestiondecalidad/index.html"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">CALIDAD</td></tr></table></paper-button></a>
+</div>
+</div>
+</div>
+<! ------>
+		<div data-role="panel" id="menu-con" data-position="left" data-display="overlay">
+		<div role="menu" class="ui-content">
+              <div id="top-b"></div>
+		<core-toolbar id="header1">
+      <a href="#menu">
+        <paper-icon-button icon="arrow-back" role="button" tabindex="0" aria-label="menu"></paper-icon-button>
+      </a>
+      <span flex="">CONOCENOS</span>
+      <a href="#" data-rel="close" data-position-to="window" data-transition="pop">
+        <paper-icon-button icon="close" role="button" tabindex="0" href="#info" aria-label="info"></paper-icon-button>
+      </a>               
+    </core-toolbar>
+<div id="pal-links">
+    <p>&nbsp;</p>
+		<a href="#historia" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="history"></core-icon></td><td align="center">HISTORIA</td></tr></table></paper-button></a>
+		<a href="#organigrama" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="account-circle"></core-icon></td><td align="center">ORGANIGRAMA</td></tr></table></paper-button></a>
+		<a href="#ubicacion" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="room"></core-icon></td><td align="center">UBICACION</td></tr></table></paper-button></a>
+		<a href="#galeria" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="perm-media"></core-icon></td><td align="center">GALERIA</td></tr></table></paper-button></a>
+</div>
+</div>
+</div>
+<! ------>
+        <div data-role="panel" id="oferta" data-position="left" data-display="overlay">
+		<div role="menu" class="ui-content">
+              <div id="top-b"></div>
+		<core-toolbar id="header1">
+      <a href="#menu">
+        <paper-icon-button icon="arrow-back" role="button" tabindex="0" aria-label="menu"></paper-icon-button>
+      </a>
+      <span flex="">OFERTA</span>
+      <a href="#" data-rel="close" data-position-to="window" data-transition="pop">
+        <paper-icon-button icon="close" role="button" tabindex="0" href="#info" aria-label="info"></paper-icon-button>
+      </a>               
+    </core-toolbar>
+<div id="pal-links">
+    <p>&nbsp;</p>
+		<a href="#digital" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">DIGITALES</td></tr></table></paper-button></a>
+		<a href="#computacion" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">COMPUTACION</td></tr></table></paper-button></a>
+		<a href="#control" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">CONTROL</td></tr></table></paper-button></a>
+		<a href="#mac" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">MAC</td></tr></table></paper-button></a>
+        <a href="#aeronautica" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">AERONAUTICA</td></tr></table></paper-button></a>
+        <a href="#automotriz" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">AUTOMOTRIZ</td></tr></table></paper-button></a>
+		</div>
+            </div>
+</div>
+    <!-- /PANEL -->
+</div>
+<!-- /AVISOS -->
+    
+<!-- Conocemos -->
+    <!-- Historia -->
+		<div data-role="page" id="historia">
+            <div id="hist">
+			<div id="top-b"></div>
+    <core-toolbar id="header1">
+      <a href="#menu-con">
+        <paper-icon-button icon="menu" role="button" tabindex="0" aria-label="menu"></paper-icon-button>
+      </a>
+      <span flex="">Historia</span>               
+    </core-toolbar>
+    <p>&nbsp;</p>
+        <div id="hist-con">
+          <p><br>
+          </p>
+          <center><h3>SEMBLANZA HIST&Oacute;RICA<br>
+            CENTRO DE ESTUDIOS CIENT&Iacute;FICOS Y TECNOL&Oacute;GICOS No. 3<br>
+            &quot;ESTANISLAO RAM&Iacute;REZ RUIZ&quot; </h3></center>
+          <p><br>
+          </p>
+          <p><br>
+          </p>
+          <p>Rese&ntilde;ar la historia de este plantel es remontarse al a&ntilde;o de 1949, en donde la din&aacute;mica de industrializaci&oacute;n del pa&iacute;s requiere de la capacitaci&oacute;n de los trabajadores. El IPN, como &oacute;rgano del Estado, al que se le ha encargado la educaci&oacute;n t&eacute;cnica crea, un a&ntilde;o antes, la Escuela Superior de Ingenier&iacute;a Qu&iacute;mica para formar t&eacute;cnicos que coadyuven en la soluci&oacute;n de los problemas existentes en el sector industrial. Al no existir una escuela que sirviera de antecedente espec&iacute;fico, para la misma, como era el caso de las Vocacionales 1 y 2 cuyos programas de estudio estaban enfocados a la preparaci&oacute;n de alumnos en la rama de la ingenier&iacute;a mec&aacute;nica, el&eacute;ctrica y arquitectura, se establece la Escuela Vocacional No. 5 de Ingenier&iacute;a Qu&iacute;mica e Industrias Extractivas (EVIQIE), en un espacio de las instalaciones de la Escuela Prevocacional 3, en Mar Mediterr&aacute;neo 227, con una poblaci&oacute;n estudiantil inicial de 16 alumnos, para posteriormente, trasladarse al cuadril&aacute;tero del Casco de Santo Tom&aacute;s, dependiendo administrativamente de la Escuela Superior de Ingenier&iacute;a Qu&iacute;mica e Industrias Extractivas (ESIQIE), cuyo director era el ingeniero Abel Dom&iacute;nguez Ponce. Posteriormente, en 1951, es nombrado como primer director el ingeniero Vicente Alonso Mart&iacute;nez. </p>
+          <p>&nbsp;</p>
+          <p>En noviembre de 1959, el Consejo T&eacute;cnico Consultivo General aprueba el Plan de Vocacional &uacute;nica y las Vocacionales cambiaron su estructura acad&eacute;mica para servir como prerrequisito de las Escuelas Superiores en el &aacute;rea del conocimiento respectivo. As&iacute;, en 1960, la Escuela Vocacional No. 5 que hab&iacute;a sido su fundamento acad&eacute;mico la ESIQIE, cambi&oacute; su nomenclatura y pas&oacute; a ser la Escuela Vocacional 3 de Ingenier&iacute;a y Ciencias F&iacute;sico Matem&aacute;ticas, ocupando en 1961 el inmueble que deja la misma, al ser &eacute;sta reubicada a la Unidad Profesional Adolfo L&oacute;pez Mateos, en Zacatenco.</p>
+          <p></p>
+          <p>&nbsp;</p>
+          <p>&nbsp; </p>
+          <p>Es en noviembre de 1964 cuando a la Escuela se le dota de un edifico propio para ella, ubicado en la Avenida de los Maestros y Calzada de los Gallos en el Casco de Santo Tom&aacute;s, sin embargo comparte el inmueble con la Vocacional No. 6 hasta el a&ntilde;o de 1972. </p>
+          <p><br>
+          </p>
+          <p>A&ntilde;os m&aacute;s tarde, con la reforma educativa establecida por el Gobierno de la Rep&uacute;blica, en 1971, las vocacionales cambiaron su estructura acad&eacute;mica y administrativa y el plan de estudios de dos a tres a&ntilde;os de duraci&oacute;n convirti&eacute;ndose en Centros de Estudios Cient&iacute;ficos y Tecnol&oacute;gicos, respet&aacute;ndose su nomenclatura y ofreciendo estudios bivalentes, es decir, carreras terminales a nivel t&eacute;cnico y a la vez bachillerato proped&eacute;utico que le permitiera al estudiante continuar con estudios de licenciatura, ofreciendo tres carreras t&eacute;cnicas: Electricidad, Electr&oacute;nica y M&aacute;quinas y Herramientas.</p>
+          <p>&nbsp;</p>
+          <p> En 1976, el Consejo General Consultivo del IPN aprob&oacute; las nuevas denominaciones para los CECyT, propuestas y fundamentadas por los directores de cada plantel, asign&aacute;ndole al CECyT 3 el nombre de Estanislao Ram&iacute;rez Ruiz, en honor al reconocido catedr&aacute;tico polit&eacute;cnico y pionero de la  Ingenier&iacute;a Qu&iacute;mica en M&eacute;xico.</p>
+          <p><br>
+          </p>
+          <p> En 1988 con la Reestructuraci&oacute;n de Planes y Programas de Estudios, se actualizaron las carreras Tecnol&oacute;gicas quedando de la siguiente manera: T&eacute;cnico en Sistemas de Control El&eacute;ctrico, T&eacute;cnico en Computaci&oacute;n, T&eacute;cnico en Sistemas Digitales y T&eacute;cnico en Maquinas y Herramientas, cabe mencionar que el CECyT No. 3 fue uno de los primeros en tener aulas did&aacute;cticas de computo. En 1996 la carrera de T&eacute;cnico en Maquinas y Herramientas cambia a T&eacute;cnico en Manufactura Asistida por Computadora. Ante el crecimiento demogr&aacute;fico que sufre la capital del pa&iacute;s, la demanda que tiene el IPN para atender las necesidades educativas de la poblaci&oacute;n y encontrarse un buen n&uacute;mero de planteles ubicados en una misma zona, decide brindarle nuevas instalaciones, amplias y modernas, acordes al desarrollo tecnol&oacute;gico y es en 1998 cuando se reubica a nuestro centro de estudios en el Municipio de Ecatepec, en un predio donado por el Gobierno del estado de M&eacute;xico y oficialmente es inaugurado el 7 de septiembre de 1999, por el entonces presidente de la Rep&uacute;blica, doctor Ernesto Zedillo Ponce de Le&oacute;n y el Gobernador del estado, licenciado C&eacute;sar Camacho Quiroz. </p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p> Todo el esfuerzo que se ha realizado en el CECyT 3 Estanislao Ram&iacute;rez Ruiz a trav&eacute;s de los a&ntilde;os con la participaci&oacute;n de su comunidad, integrada por: alumnos, padres de familia, acad&eacute;micospersonal de apoyo y asistencia a la educaci&oacute;n, as&iacute; como las autoridades, se vio coronado con el reconocimiento que le otorg&oacute; el gobierno municipal, al ser inscrito el 4 de junio de 2007 con letras de oro, el nombre de IPN CECyT 3 en la sala de Cabildos de Ecatepec.</p>
+          <p><br>
+          </p>
+          <p>Tanto en el pasado, como en la actualidad, se han logrado diversos avances acad&eacute;micos como la impartici&oacute;n de cursos, diplomados, congresos de l&iacute;deres acad&eacute;micos y han egresado siete generaciones de docentes que han obtenido el Diploma del nuevo modelo educativo, sin dejar de mencionar que al personal de apoyo y asistencia a la educaci&oacute;n forma parte de un programa permanente de capacitaci&oacute;n impartido tanto en las propias instalaciones como en diversas dependencias del IPN.  En los a&ntilde;os 2009 y 2010, el CECyT 3 Estanislao Ram&iacute;rez Ruiz, obtuvo el primer lugar en la prueba de Evaluaci&oacute;n Nacional del Logro Acad&eacute;mico en Centros Escolares (ENLACE), de la Secretar&iacute;a de Educaci&oacute;n P&uacute;blica (SEP) y la primera escuela a nivel nacional con Dictamen de Calidad en Infraestructura Educativa, otorgado por la Entidad Mexicana de Acreditaci&oacute;n, A.C. (EMA), por cumplir con la Norma NMX-R-021-CSFI-2005.</p>
+          <p><br>
+          </p>
+          <p>En la actualidad, en el CECyT 3, se imparten seis especialidades: Sistemas de Control El&eacute;ctrico, Computaci&oacute;n, Sistemas Digitales, Manufactura Asistida por Computadora, Sistemas Automotrices y  Aeron&aacute;utica. </p>
+          <p><br>
+          </p>
+          <p>Qu&iacute;mica Otilia Torres Vivanco<br>
+          Maestra decana del CECyT 3 ERR<br>
+          <br>
+          </p>
+            <hr>
+          <p>&nbsp;</p>
+          <p><center><img src="http://www.cecyt3.ipn.mx/conocenos/images/err.jpg"></center></p>
+          <p>&nbsp;</p>
+          <p>El Ing. Estanislao Ram&iacute;rez Ruiz nace el 7 de mayo de 1887 en el pueblo de Tl&aacute;huac, D.F. egresa del Colegio Militar, obteniendo una beca para estudiar en la Universidad de Sorbona de Par&iacute;s la carrera de Ingenier&iacute;a, posteriormente obtiene la especializaci&oacute;n en F&iacute;sico - Qu&iacute;mica y Termodin&aacute;mica en Zurich, Suiza, destac&aacute;ndose en el dise&ntilde;o de equipo y plantas industriales. En el a&ntilde;o de 1921 regresa a M&eacute;xico y poco tiempo despu&eacute;s se integra al grupo encargado de elaborar el proyecto de planes y programas de estudio que ser&iacute;a la base de la fundaci&oacute;n del IPN. El Ing. Estanislao Ram&iacute;rez Ruiz es fundador de la ESIQIE y despu&eacute;s de esta ardua labor fallece el 11 de octubre de 1952. Por estos antecedentes que resultan relevantes es que nos enorgullece que nuestra escuela se distinga con tan honorable nombre.</p>
+          <p><br>
+          </p>
+        </div>
+        </div>
+<!-- PANEL -->
+  <div data-role="panel" id="menu" data-position="left" data-display="overlay">  
+          <div role="menu" class="ui-content">
+              <div id="top-b"></div>
+		<core-toolbar id="header1">
+      <a href="#main" data-rel="close">
+        <paper-icon-button icon="close" role="button" tabindex="0" aria-label="menu"></paper-icon-button>
+      </a>
+      <span flex="">MENU</span>
+          </core-toolbar>
+<div id="pal-links">
+    <p>&nbsp;</p>
+    <a href="#home" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">HOME</td></tr></table></paper-button></a>
+    <a href="#avisos" data-transition="slidedown" data-rel="close"><paper-button raised><table border=0><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">AVISOS</td></tr></table></paper-button></a>
+    <a href="#menu-con"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">CONOCENOS</td></tr></table></paper-button></a>
+    <a href="#oferta" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">OFERTA EDUCATIVA</td></tr></table></paper-button></a>
+    <a href="#estudiantes" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">ESTUDIANTES</td></tr></table></paper-button></a>
+    <a href="http://www.cecyt3.ipn.mx/egresados/index.html"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">EGRESADOS</td></tr></table></paper-button></a>
+    <a href="http://www.cecyt3.ipn.mx/investigacion/index.html"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">INVESTIGACION</td></tr></table></paper-button></a>
+    <a href="http://www.cecyt3.ipn.mx/servicios/index.html"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">SERVICIOS</td></tr></table></paper-button></a>
+    <a href="http://www.cecyt3.ipn.mx/gestiondecalidad/index.html"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">CALIDAD</td></tr></table></paper-button></a>
+</div>
+</div>
+</div>
+<! ------>
+		<div data-role="panel" id="menu-con" data-position="left" data-display="overlay">
+		<div role="menu" class="ui-content">
+              <div id="top-b"></div>
+		<core-toolbar id="header1">
+      <a href="#menu">
+        <paper-icon-button icon="arrow-back" role="button" tabindex="0" aria-label="menu"></paper-icon-button>
+      </a>
+      <span flex="">CONOCENOS</span>
+      <a href="#" data-rel="close" data-position-to="window" data-transition="pop">
+        <paper-icon-button icon="close" role="button" tabindex="0" href="#info" aria-label="info"></paper-icon-button>
+      </a>               
+    </core-toolbar>
+<div id="pal-links">
+    <p>&nbsp;</p>
+		<a href="#historia" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="history"></core-icon></td><td align="center">HISTORIA</td></tr></table></paper-button></a>
+		<a href="#organigrama" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="account-circle"></core-icon></td><td align="center">ORGANIGRAMA</td></tr></table></paper-button></a>
+		<a href="#ubicacion" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="room"></core-icon></td><td align="center">UBICACION</td></tr></table></paper-button></a>
+		<a href="#galeria" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="perm-media"></core-icon></td><td align="center">GALERIA</td></tr></table></paper-button></a>
+</div>
+</div>
+</div>
+<! ------>
+        <div data-role="panel" id="oferta" data-position="left" data-display="overlay">
+		<div role="menu" class="ui-content">
+              <div id="top-b"></div>
+		<core-toolbar id="header1">
+      <a href="#menu">
+        <paper-icon-button icon="arrow-back" role="button" tabindex="0" aria-label="menu"></paper-icon-button>
+      </a>
+      <span flex="">OFERTA</span>
+      <a href="#" data-rel="close" data-position-to="window" data-transition="pop">
+        <paper-icon-button icon="close" role="button" tabindex="0" href="#info" aria-label="info"></paper-icon-button>
+      </a>               
+    </core-toolbar>
+<div id="pal-links">
+    <p>&nbsp;</p>
+		<a href="#digital" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">DIGITALES</td></tr></table></paper-button></a>
+		<a href="#computacion" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">COMPUTACION</td></tr></table></paper-button></a>
+		<a href="#control" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">CONTROL</td></tr></table></paper-button></a>
+		<a href="#mac" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">MAC</td></tr></table></paper-button></a>
+        <a href="#aeronautica" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">AERONAUTICA</td></tr></table></paper-button></a>
+        <a href="#automotriz" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">AUTOMOTRIZ</td></tr></table></paper-button></a>
+		</div>
+            </div>
+</div>
+    <!-- /PANEL -->
+</div>
+<!-- /Historia -->
+<!-- ORGANIGRAMA -->
+	<div data-role="page" id="organigrama">
+		    <div id="top-b"></div>
+    <core-toolbar id="header1">
+      <a href="#menu-con">
+        <paper-icon-button icon="menu" role="button" tabindex="0" aria-label="menu"></paper-icon-button>
+      </a>
+      <span flex="">Organigrama</span>               
+    </core-toolbar>
+    <p>&nbsp;</p>
+				<div data-role="content">
+
+		<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="650" height="950" align="center" id="FlashID" title="Organigrama CECyT3" style="visibility: inherit;">
+              <param name="movie" value="http://www.cecyt3.ipn.mx/conocenos/directorio/organigrama.swf">
+              <param name="quality" value="high">
+              <param name="wmode" value="transparent">
+              <param name="swfversion" value="8.0.35.0">
+              <!-- Esta etiqueta param indica a los usuarios de Flash Player 6.0 r65 o posterior que descarguen la versi&oacute;n m&aacute;s reciente de Flash Player. Elim&iacute;nela si no desea que los usuarios vean el mensaje. -->
+              <param name="expressinstall" value="http://www.cecyt3.ipn.mx/conocenos/Scripts/expressInstall.swf">
+              <!-- La siguiente etiqueta object es para navegadores distintos de IE. Oc&uacute;ltela a IE mediante IECC. -->
+              <!--[if !IE]>-->
+              <object data="http://www.cecyt3.ipn.mx/conocenos/directorio/organigrama.swf" type="application/x-shockwave-flash" width="650" height="950" align="center">
+                <!--<![endif]-->
+                <param name="quality" value="high">
+                <param name="wmode" value="transparent">
+                <param name="swfversion" value="8.0.35.0">
+                <param name="expressinstall" value="http://www.cecyt3.ipn.mx/conocenos//Scripts/expressInstall.swf">
+                <!-- El navegador muestra el siguiente contenido alternativo para usuarios con Flash Player 6.0 o versiones anteriores. -->
+                <div>
+                  <h4>El contenido de esta p&aacute;gina requiere una versi&oacute;n m&aacute;s reciente de Adobe Flash Player.</h4>
+                  <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Obtener Adobe Flash Player"></a></p>
+                </div>
+                <!--[if !IE]>-->
+              </object>
+              <!--<![endif]-->
+            </object>
+	</div>
+<!-- PANEL -->
+  <div data-role="panel" id="menu" data-position="left" data-display="overlay">  
+          <div role="menu" class="ui-content">
+              <div id="top-b"></div>
+		<core-toolbar id="header1">
+      <a href="#main" data-rel="close">
+        <paper-icon-button icon="close" role="button" tabindex="0" aria-label="menu"></paper-icon-button>
+      </a>
+      <span flex="">MENU</span>
+          </core-toolbar>
+<div id="pal-links">
+    <p>&nbsp;</p>
+    <a href="#home" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">HOME</td></tr></table></paper-button></a>
+    <a href="#avisos" data-transition="slidedown" data-rel="close"><paper-button raised><table border=0><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">AVISOS</td></tr></table></paper-button></a>
+    <a href="#menu-con"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">CONOCENOS</td></tr></table></paper-button></a>
+    <a href="#oferta" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">OFERTA EDUCATIVA</td></tr></table></paper-button></a>
+    <a href="#estudiantes" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">ESTUDIANTES</td></tr></table></paper-button></a>
+    <a href="http://www.cecyt3.ipn.mx/egresados/index.html"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">EGRESADOS</td></tr></table></paper-button></a>
+    <a href="http://www.cecyt3.ipn.mx/investigacion/index.html"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">INVESTIGACION</td></tr></table></paper-button></a>
+    <a href="http://www.cecyt3.ipn.mx/servicios/index.html"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">SERVICIOS</td></tr></table></paper-button></a>
+    <a href="http://www.cecyt3.ipn.mx/gestiondecalidad/index.html"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">CALIDAD</td></tr></table></paper-button></a>
+</div>
+</div>
+</div>
+<! ------>
+		<div data-role="panel" id="menu-con" data-position="left" data-display="overlay">
+		<div role="menu" class="ui-content">
+              <div id="top-b"></div>
+		<core-toolbar id="header1">
+      <a href="#menu">
+        <paper-icon-button icon="arrow-back" role="button" tabindex="0" aria-label="menu"></paper-icon-button>
+      </a>
+      <span flex="">CONOCENOS</span>
+      <a href="#" data-rel="close" data-position-to="window" data-transition="pop">
+        <paper-icon-button icon="close" role="button" tabindex="0" href="#info" aria-label="info"></paper-icon-button>
+      </a>               
+    </core-toolbar>
+<div id="pal-links">
+    <p>&nbsp;</p>
+		<a href="#historia" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="history"></core-icon></td><td align="center">HISTORIA</td></tr></table></paper-button></a>
+		<a href="#organigrama" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="account-circle"></core-icon></td><td align="center">ORGANIGRAMA</td></tr></table></paper-button></a>
+		<a href="#ubicacion" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="room"></core-icon></td><td align="center">UBICACION</td></tr></table></paper-button></a>
+		<a href="#galeria" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="perm-media"></core-icon></td><td align="center">GALERIA</td></tr></table></paper-button></a>
+</div>
+</div>
+</div>
+<! ------>
+        <div data-role="panel" id="oferta" data-position="left" data-display="overlay">
+		<div role="menu" class="ui-content">
+              <div id="top-b"></div>
+		<core-toolbar id="header1">
+      <a href="#menu">
+        <paper-icon-button icon="arrow-back" role="button" tabindex="0" aria-label="menu"></paper-icon-button>
+      </a>
+      <span flex="">OFERTA</span>
+      <a href="#" data-rel="close" data-position-to="window" data-transition="pop">
+        <paper-icon-button icon="close" role="button" tabindex="0" href="#info" aria-label="info"></paper-icon-button>
+      </a>               
+    </core-toolbar>
+<div id="pal-links">
+    <p>&nbsp;</p>
+		<a href="#digital" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">DIGITALES</td></tr></table></paper-button></a>
+		<a href="#computacion" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">COMPUTACION</td></tr></table></paper-button></a>
+		<a href="#control" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">CONTROL</td></tr></table></paper-button></a>
+		<a href="#mac" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">MAC</td></tr></table></paper-button></a>
+        <a href="#aeronautica" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">AERONAUTICA</td></tr></table></paper-button></a>
+        <a href="#automotriz" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">AUTOMOTRIZ</td></tr></table></paper-button></a>
+		</div>
+            </div>
+</div>
+    <!-- /PANEL -->
+</div>
+<!-- /Organigrama -->
+<!-- Mapa -->
+    <div data-role="page" id="ubicacion">
+        <div id="hist">
+			<div id="top-b"></div>
+    <core-toolbar id="header1">
+      <a href="#menu-con">
+        <paper-icon-button icon="menu" role="button" tabindex="0" aria-label="menu"></paper-icon-button>
+      </a>
+      <span flex="">Ubicacion</span>               
+    </core-toolbar>
+    <p>&nbsp;</p>
+				<div data-role="content">
+		<center>
+<iframe width="650" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.mx/maps?ie=UTF8&amp;f=d&amp;daddr=Centro+de+Estudios+Cient%C3%ADficos+y+Tecnol%C3%B3gicos+3,+Carlos+Hank+Gonz%C3%A1lez+s%2Fn,+Valle+de+Ecatepec,+55119+Ecatepec+de+Morelos,+Estado+de+M%C3%A9xico&amp;geocode=CWFgeJAdeaAvFemfKgEdQhUZ-iGX5slBq9xUOA&amp;gl=MX&amp;hl=es&amp;t=m&amp;ll=19.570665,-99.019454&amp;spn=0.006295,0.006681&amp;output=embed"></iframe>
+		</center>
+            </div></div>
+<!-- PANEL -->
+  <div data-role="panel" id="menu" data-position="left" data-display="overlay">  
+          <div role="menu" class="ui-content">
+              <div id="top-b"></div>
+		<core-toolbar id="header1">
+      <a href="#main" data-rel="close">
+        <paper-icon-button icon="close" role="button" tabindex="0" aria-label="menu"></paper-icon-button>
+      </a>
+      <span flex="">MENU</span>
+          </core-toolbar>
+<div id="pal-links">
+    <p>&nbsp;</p>
+    <a href="#home" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">HOME</td></tr></table></paper-button></a>
+    <a href="#avisos" data-transition="slidedown" data-rel="close"><paper-button raised><table border=0><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">AVISOS</td></tr></table></paper-button></a>
+    <a href="#menu-con"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">CONOCENOS</td></tr></table></paper-button></a>
+    <a href="#oferta" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">OFERTA EDUCATIVA</td></tr></table></paper-button></a>
+    <a href="#estudiantes" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">ESTUDIANTES</td></tr></table></paper-button></a>
+    <a href="http://www.cecyt3.ipn.mx/egresados/index.html"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">EGRESADOS</td></tr></table></paper-button></a>
+    <a href="http://www.cecyt3.ipn.mx/investigacion/index.html"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">INVESTIGACION</td></tr></table></paper-button></a>
+    <a href="http://www.cecyt3.ipn.mx/servicios/index.html"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">SERVICIOS</td></tr></table></paper-button></a>
+    <a href="http://www.cecyt3.ipn.mx/gestiondecalidad/index.html"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">CALIDAD</td></tr></table></paper-button></a>
+</div>
+</div>
+</div>
+<! ------>
+		<div data-role="panel" id="menu-con" data-position="left" data-display="overlay">
+		<div role="menu" class="ui-content">
+              <div id="top-b"></div>
+		<core-toolbar id="header1">
+      <a href="#menu">
+        <paper-icon-button icon="arrow-back" role="button" tabindex="0" aria-label="menu"></paper-icon-button>
+      </a>
+      <span flex="">CONOCENOS</span>
+      <a href="#" data-rel="close" data-position-to="window" data-transition="pop">
+        <paper-icon-button icon="close" role="button" tabindex="0" href="#info" aria-label="info"></paper-icon-button>
+      </a>               
+    </core-toolbar>
+<div id="pal-links">
+    <p>&nbsp;</p>
+		<a href="#historia" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="history"></core-icon></td><td align="center">HISTORIA</td></tr></table></paper-button></a>
+		<a href="#organigrama" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="account-circle"></core-icon></td><td align="center">ORGANIGRAMA</td></tr></table></paper-button></a>
+		<a href="#ubicacion" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="room"></core-icon></td><td align="center">UBICACION</td></tr></table></paper-button></a>
+		<a href="#galeria" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="perm-media"></core-icon></td><td align="center">GALERIA</td></tr></table></paper-button></a>
+</div>
+</div>
+</div>
+<! ------>
+        <div data-role="panel" id="oferta" data-position="left" data-display="overlay">
+		<div role="menu" class="ui-content">
+              <div id="top-b"></div>
+		<core-toolbar id="header1">
+      <a href="#menu">
+        <paper-icon-button icon="arrow-back" role="button" tabindex="0" aria-label="menu"></paper-icon-button>
+      </a>
+      <span flex="">OFERTA</span>
+      <a href="#" data-rel="close" data-position-to="window" data-transition="pop">
+        <paper-icon-button icon="close" role="button" tabindex="0" href="#info" aria-label="info"></paper-icon-button>
+      </a>               
+    </core-toolbar>
+<div id="pal-links">
+    <p>&nbsp;</p>
+		<a href="#digital" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">DIGITALES</td></tr></table></paper-button></a>
+		<a href="#computacion" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">COMPUTACION</td></tr></table></paper-button></a>
+		<a href="#control" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">CONTROL</td></tr></table></paper-button></a>
+		<a href="#mac" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">MAC</td></tr></table></paper-button></a>
+        <a href="#aeronautica" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">AERONAUTICA</td></tr></table></paper-button></a>
+        <a href="#automotriz" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">AUTOMOTRIZ</td></tr></table></paper-button></a>
+		</div>
+            </div>
+</div>
+    <!-- /PANEL -->
+        </div>
+<!-- /Mapa -->
+<!-- Galeria -->
+		<div data-role="page" id="galeria">
+			<div id="hist">
+			<div id="top-b"></div>
+    <core-toolbar id="header1">
+      <a href="#menu-con">
+        <paper-icon-button icon="menu" role="button" tabindex="0" aria-label="menu"></paper-icon-button>
+      </a>
+      <span flex="">Galeria</span>               
+    </core-toolbar>
+    <p>&nbsp;</p>
+				<div data-role="content">
+		<center>
+		<iframe width="560" height="315" src="http://www.youtube.com/embed/lt8TRpqCE6s" frameborder="0" allowfullscreen=""></iframe>
+		<p><iframe width="560" height="315" src="http://www.youtube.com/embed/tJzQiK-okAM" frameborder="0" allowfullscreen=""></iframe></p>
+		</center>
+                </div></div>
+<!-- PANEL -->
+  <div data-role="panel" id="menu" data-position="left" data-display="overlay">  
+          <div role="menu" class="ui-content">
+              <div id="top-b"></div>
+		<core-toolbar id="header1">
+      <a href="#main" data-rel="close">
+        <paper-icon-button icon="close" role="button" tabindex="0" aria-label="menu"></paper-icon-button>
+      </a>
+      <span flex="">MENU</span>
+          </core-toolbar>
+<div id="pal-links">
+    <p>&nbsp;</p>
+    <a href="#home" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">HOME</td></tr></table></paper-button></a>
+    <a href="#avisos" data-transition="slidedown" data-rel="close"><paper-button raised><table border=0><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">AVISOS</td></tr></table></paper-button></a>
+    <a href="#menu-con"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">CONOCENOS</td></tr></table></paper-button></a>
+    <a href="#oferta" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">OFERTA EDUCATIVA</td></tr></table></paper-button></a>
+    <a href="#estudiantes" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">ESTUDIANTES</td></tr></table></paper-button></a>
+    <a href="http://www.cecyt3.ipn.mx/egresados/index.html"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">EGRESADOS</td></tr></table></paper-button></a>
+    <a href="http://www.cecyt3.ipn.mx/investigacion/index.html"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">INVESTIGACION</td></tr></table></paper-button></a>
+    <a href="http://www.cecyt3.ipn.mx/servicios/index.html"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">SERVICIOS</td></tr></table></paper-button></a>
+    <a href="http://www.cecyt3.ipn.mx/gestiondecalidad/index.html"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">CALIDAD</td></tr></table></paper-button></a>
+</div>
+</div>
+</div>
+<! ------>
+		<div data-role="panel" id="menu-con" data-position="left" data-display="overlay">
+		<div role="menu" class="ui-content">
+              <div id="top-b"></div>
+		<core-toolbar id="header1">
+      <a href="#menu">
+        <paper-icon-button icon="arrow-back" role="button" tabindex="0" aria-label="menu"></paper-icon-button>
+      </a>
+      <span flex="">CONOCENOS</span>
+      <a href="#" data-rel="close" data-position-to="window" data-transition="pop">
+        <paper-icon-button icon="close" role="button" tabindex="0" href="#info" aria-label="info"></paper-icon-button>
+      </a>               
+    </core-toolbar>
+<div id="pal-links">
+    <p>&nbsp;</p>
+		<a href="#historia" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="history"></core-icon></td><td align="center">HISTORIA</td></tr></table></paper-button></a>
+		<a href="#organigrama" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="account-circle"></core-icon></td><td align="center">ORGANIGRAMA</td></tr></table></paper-button></a>
+		<a href="#ubicacion" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="room"></core-icon></td><td align="center">UBICACION</td></tr></table></paper-button></a>
+		<a href="#galeria" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="perm-media"></core-icon></td><td align="center">GALERIA</td></tr></table></paper-button></a>
+</div>
+</div>
+</div>
+<! ------>
+        <div data-role="panel" id="oferta" data-position="left" data-display="overlay">
+		<div role="menu" class="ui-content">
+              <div id="top-b"></div>
+		<core-toolbar id="header1">
+      <a href="#menu">
+        <paper-icon-button icon="arrow-back" role="button" tabindex="0" aria-label="menu"></paper-icon-button>
+      </a>
+      <span flex="">OFERTA</span>
+      <a href="#" data-rel="close" data-position-to="window" data-transition="pop">
+        <paper-icon-button icon="close" role="button" tabindex="0" href="#info" aria-label="info"></paper-icon-button>
+      </a>               
+    </core-toolbar>
+<div id="pal-links">
+    <p>&nbsp;</p>
+		<a href="#digital" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">DIGITALES</td></tr></table></paper-button></a>
+		<a href="#computacion" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">COMPUTACION</td></tr></table></paper-button></a>
+		<a href="#control" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">CONTROL</td></tr></table></paper-button></a>
+		<a href="#mac" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">MAC</td></tr></table></paper-button></a>
+        <a href="#aeronautica" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">AERONAUTICA</td></tr></table></paper-button></a>
+        <a href="#automotriz" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">AUTOMOTRIZ</td></tr></table></paper-button></a>
+		</div>
+            </div>
+</div>
+    <!-- /PANEL -->
+    </div>
+<!-- /Galeria -->
+<!-- /Conocenos -->
+<!-- Oferta -->
+<!-- Digitales -->
+<div data-role="page" id="digital">
+			<div id="hist">
+			<div id="top-b"></div>
+    <core-toolbar id="header1">
+      <a href="#oferta">
+        <paper-icon-button icon="menu" role="button" tabindex="0" aria-label="menu"></paper-icon-button>
+      </a>
+      <span flex="">Sistemas Digitales</span>               
+    </core-toolbar>
+    <p>&nbsp;</p>
+				<div data-role="content">
+          <center><h3>T&eacute;cnico en Sistemas Digitales</h3></center>
+              
+          <center><p>ANTECEDENTES DE LA CARRERA</p></center>
+          <p>Con el desarrollo de los equipos de c&oacute;mputo y su aplicaci&oacute;n en todas las &aacute;reas (inform&aacute;tica, industria, telecomunicaciones, medicina, etc.), en la d&eacute;cada de los setenta, se inicia la necesidad de formar t&eacute;cnicos en sistemas digitales, esto debido a la r&aacute;pida evoluci&oacute;n de los circuitos integrados hacia los microprocesadores y micro controladores y memorias. Este crecimiento industrial hacer surgir la necesidad de formar recursos humanos con los conocimientos y habilidades en los sistemas digitales, para su operaci&oacute;n, instalaci&oacute;n y mantenimiento en estos sectores laborales. Por lo anterior el IPN cre&oacute; la carrera T&eacute;cnico en Sistemas Digitales en 1987 a trav&eacute;s del CECYT 3 Estanislao Ram&iacute;rez Ru&iacute;z y el CECYT 9 Juan de Dios B&aacute;tiz Paredes, con una duraci&oacute;n inicial de dos a&ntilde;os en el &aacute;rea tecnol&oacute;gica Despu&eacute;s de dos reestructuraciones, en 1988 y 1994, se incorpora el CECYT 1 Gonzalo V&aacute;zquez Vela.</p>
+                    
+          <center><p>OBJETIVO DE LA CARRERA</p></center>
+
+          <p>Formar t&eacute;cnicos en el campo de los sistemas electr&oacute;nicos digitales con la capacidad para contribuir a la soluci&oacute;n de problemas mediante el desarrollo, manejo y operaci&oacute;n al dar&nbsp;mantenimiento preventivo y correctivo a los sistemas electr&oacute;nicos digitales de c&oacute;mputo, medici&oacute;n y control utilizados en la industria, la medicina, las comunicaciones, la docencia y los servicios.</p>
+          
+          <center><p>PERFIL DE INGRESO</p></center>
+       
+          <p>Conocimiento s&oacute;lido en el &aacute;rea de ciencias b&aacute;sicas.<br>
+          Conocimiento del idioma ingl&eacute;s.<br>
+          Conocer el manejo y aplicaci&oacute;n de paqueter&iacute;a de c&oacute;mputo comercial.<br>
+          Facilidad en el c&aacute;lculo matem&aacute;tico.<br>
+          Racionalizar problemas.</p>
+         
+          <center><p>PERFIL DE EGRESO: </p></center>
+          
+          <p>Maneja dispositivos electr&oacute;nicos para comprobar el funcionamiento en aplicaciones de sistemas digitales.<br>
+          Desarrolla sistemas pr&aacute;cticos mediante el an&aacute;lisis, interpretaci&oacute;n y programaci&oacute;n de dispositivos electr&oacute;nicos para la implementaci&oacute;n de aplicaciones de automatizaci&oacute;n y control de procesos.<br>
+          Analiza los diferentes tipos de sistemas de control e instrumentaci&oacute;n industrial para la selecci&oacute;n, implementaci&oacute;n, detecci&oacute;n de fallas y ejecuci&oacute;n de los procesos automatizados incluyendo la rob&oacute;tica industrial.<br>
+          Proporciona mantenimiento preventivo y correctivo al hardware y software de c&oacute;mputo, utilizando correctamente las herramientas que sean requeridas para lograr un trabajo con calidad.<br>
+          Desarrolla aplicaciones innovadoras que resuelvan problemas de sistemas digitales por medio de internet.<br>
+          Implementa redes de &aacute;rea local al&aacute;mbricas e inal&aacute;mbricas de acuerdo a las especificaciones y normas estandarizadas.</p>
+            <center><video buffered controls preload="auto" src="http://cecyt3-mobile.hol.es/media/digi.mp4" height="220"></video></center>
+			</div>
+		</div>
+<!-- PANEL -->
+  <div data-role="panel" id="menu" data-position="left" data-display="overlay">  
+          <div role="menu" class="ui-content">
+              <div id="top-b"></div>
+		<core-toolbar id="header1">
+      <a href="#main" data-rel="close">
+        <paper-icon-button icon="close" role="button" tabindex="0" aria-label="menu"></paper-icon-button>
+      </a>
+      <span flex="">MENU</span>
+          </core-toolbar>
+<div id="pal-links">
+    <p>&nbsp;</p>
+    <a href="#home" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">HOME</td></tr></table></paper-button></a>
+    <a href="#avisos" data-transition="slidedown" data-rel="close"><paper-button raised><table border=0><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">AVISOS</td></tr></table></paper-button></a>
+    <a href="#menu-con"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">CONOCENOS</td></tr></table></paper-button></a>
+    <a href="#oferta" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">OFERTA EDUCATIVA</td></tr></table></paper-button></a>
+    <a href="#estudiantes" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">ESTUDIANTES</td></tr></table></paper-button></a>
+    <a href="http://www.cecyt3.ipn.mx/egresados/index.html"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">EGRESADOS</td></tr></table></paper-button></a>
+    <a href="http://www.cecyt3.ipn.mx/investigacion/index.html"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">INVESTIGACION</td></tr></table></paper-button></a>
+    <a href="http://www.cecyt3.ipn.mx/servicios/index.html"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">SERVICIOS</td></tr></table></paper-button></a>
+    <a href="http://www.cecyt3.ipn.mx/gestiondecalidad/index.html"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">CALIDAD</td></tr></table></paper-button></a>
+</div>
+</div>
+</div>
+<! ------>
+		<div data-role="panel" id="menu-con" data-position="left" data-display="overlay">
+		<div role="menu" class="ui-content">
+              <div id="top-b"></div>
+		<core-toolbar id="header1">
+      <a href="#menu">
+        <paper-icon-button icon="arrow-back" role="button" tabindex="0" aria-label="menu"></paper-icon-button>
+      </a>
+      <span flex="">CONOCENOS</span>
+      <a href="#" data-rel="close" data-position-to="window" data-transition="pop">
+        <paper-icon-button icon="close" role="button" tabindex="0" href="#info" aria-label="info"></paper-icon-button>
+      </a>               
+    </core-toolbar>
+<div id="pal-links">
+    <p>&nbsp;</p>
+		<a href="#historia" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="history"></core-icon></td><td align="center">HISTORIA</td></tr></table></paper-button></a>
+		<a href="#organigrama" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="account-circle"></core-icon></td><td align="center">ORGANIGRAMA</td></tr></table></paper-button></a>
+		<a href="#ubicacion" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="room"></core-icon></td><td align="center">UBICACION</td></tr></table></paper-button></a>
+		<a href="#galeria" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="perm-media"></core-icon></td><td align="center">GALERIA</td></tr></table></paper-button></a>
+</div>
+</div>
+</div>
+<! ------>
+        <div data-role="panel" id="oferta" data-position="left" data-display="overlay">
+		<div role="menu" class="ui-content">
+              <div id="top-b"></div>
+		<core-toolbar id="header1">
+      <a href="#menu">
+        <paper-icon-button icon="arrow-back" role="button" tabindex="0" aria-label="menu"></paper-icon-button>
+      </a>
+      <span flex="">OFERTA</span>
+      <a href="#" data-rel="close" data-position-to="window" data-transition="pop">
+        <paper-icon-button icon="close" role="button" tabindex="0" href="#info" aria-label="info"></paper-icon-button>
+      </a>               
+    </core-toolbar>
+<div id="pal-links">
+    <p>&nbsp;</p>
+		<a href="#digital" data-transition="slidedown" data-rel="close"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">DIGITALES</td></tr></table></paper-button></a>
+		<a href="#computacion" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">COMPUTACION</td></tr></table></paper-button></a>
+		<a href="#control" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">CONTROL</td></tr></table></paper-button></a>
+		<a href="#mac" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">MAC</td></tr></table></paper-button></a>
+        <a href="#aeronautica" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">AERONAUTICA</td></tr></table></paper-button></a>
+        <a href="#automotriz" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">AUTOMOTRIZ</td></tr></table></paper-button></a>
+		</div>
+            </div>
+</div>
+    <!-- /PANEL -->
+    </div>
+<!-- /Digitales -->
+<!-- Computacion -->
+        <div data-role="page" id="computacion">
+			<div id="hist">
+			<div id="top-b"></div>
+    <core-toolbar id="header1">
+      <a href="#oferta">
+        <paper-icon-button icon="menu" role="button" tabindex="0" aria-label="menu"></paper-icon-button>
+      </a>
+      <span flex="">Computacion</span>               
+    </core-toolbar>
+    <p>&nbsp;</p>
+				<div data-role="content">
+          <center><h3>T&eacute;cnico en Computaci&oacute;n</h3></center>
+              
+          <center><p>ANTECEDENTES DE LA CARRERA</p></center>
+          <p>En el a&ntilde;o de 1972, se modifica el plan anual de estudios vigente en las vocacionales cre&aacute;ndose los CECyT y el plan semestral y con estas las carreras como la de T&Eacute;CNICO EN COMPUTACI&Oacute;N creada en 1988 para tratar de satisfacer los requerimientos de personal de las empresas. Al crear este plan de estudios se desconoc&iacute;an los alcances y repercusiones que tendr&aacute;n a un futuro inmediato las computadoras y el software que se generar&iacute;a para su mayor aprovechamiento, en especial las computadoras personales (PC), por ejemplo los avances tan r&aacute;pidos y constantes que se han dado tanto en la tecnolog&iacute;a de las computadora personales (hardware) as&iacute; como de los sistemas operativos, lenguajes y paqueter&iacute;a (software) propiciaron que se diera un gran distanciamiento entre la realidad y lo que se manejaba en las aulas de c&oacute;mputo.</p>
+                    
+          <center><p>OBJETIVO DE LA CARRERA</p></center>
+
+          <p>Formar T&eacute;cnicos Profesionales a nivel medio superior, que al finalizar sus estudios, habr&aacute;n adquirido conocimientos y habilidades y actitudes en el uso de Lenguajes de Programaci&oacute;n para la aplicaci&oacute;n y dise&ntilde;o de sistemas computacionales, detectar y corregir f&iacute;sicos y l&oacute;gicos por medio de soporte t&eacute;cnico (software) as&iacute; como hacer uso racional y sistem&aacute;tico de sus recursos a su cargo, vali&eacute;ndose de conocimientos pr&aacute;cticos y te&oacute;ricos que le permitan al egresado satisfacer las necesidades del sector p&uacuta;blico de bienes y servicios, adem&aacute;s de estar en posibilidad de integrarse y al mismo tiempo adquieran los conocimientos y habilidades b&aacute;sicas que le permitan continuar sus estudios a nivel superior, participaci&oacute;n activa frente a los retos del mundo actual e incorporar a nuestros j&oacute;venes de forma planeada y sistem&aacute;tica el &aacute;mbito industrial globalizado</p>
+          
+          <center><p>PERFIL DE INGRESO</p></center>
+       
+          <p>CONOCIMIENTOS: Computaci&oacute;n B&aacute;sicos, Ingl&eacute;s b&aacute;sico, Matem&aacute;ticas en las &aacute;reas de &aacute;lgebra y trigonometr&iacute;a, Comunicaci&oacute;n oral y escrita .<br>
+          HABILIDADES: Inducci&oacute;n, deducci&oacute;n, an&aacute;lisis y traducci&oacute;n<br>
+         ACTITUDES: Responsabilidad, compromiso, respeto, limpieza y &eacute;tica</p>
+         
+          <center><p>PERFIL DE EGRESO: </p></center>
+          
+          <p>Los egresados de la carrera de T&eacute;cnico en Computaci&oacute;n, tendr&aacute;n las siguientes competencias que definir&aacute;n su perfil:<br>
+          Soluciona problemas de hardware y software con base en las tecnolog&iacute;as y normatividad vigentes.<br>
+          Instala componentes de la computadora, configura software para la puesta en marcha de equipo de c&oacute;mputo, realiza servicios de mantenimiento preventivo y correctivo.<br>
+          Construye una red de c&oacute;mputo con base en la normatividad vigente para el intercambio de informaci&oacute;n: Implementa topolog&iacute;as de redes, configura redes de c&oacute;mputo, manipula redes de c&oacute;mputo, implementa hardware de redes.<br>
+          Soluciona problemas de diferentes sectores de la sociedad a trav&eacute;s de lenguajes de programaci&oacute;n de interfaz gr&aacute;fica y orientados a la programaci&oacute;n WEB, gestionando la informaci&oacute;n de la base de datos: Construye programas, crea portales WEB, gestiona informaci&oacute;n de la base de dato, etc.</p>
+            <center><video buffered controls preload="auto" src="http://cecyt3-mobile.hol.es/media/compu.mp4" height="220"></video></center>
+			</div>
+		</div>
+<!-- PANEL -->
+  <div data-role="panel" id="menu" data-position="left" data-display="overlay">  
+          <div role="menu" class="ui-content">
+              <div id="top-b"></div>
+		<core-toolbar id="header1">
+      <a href="#main" data-rel="close">
+        <paper-icon-button icon="close" role="button" tabindex="0" aria-label="menu"></paper-icon-button>
+      </a>
+      <span flex="">MENU</span>
+          </core-toolbar>
+<div id="pal-links">
+    <p>&nbsp;</p>
+    <a href="#home" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">HOME</td></tr></table></paper-button></a>
+    <a href="#avisos" data-transition="slidedown" data-rel="close"><paper-button raised><table border=0><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">AVISOS</td></tr></table></paper-button></a>
+    <a href="#menu-con"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">CONOCENOS</td></tr></table></paper-button></a>
+    <a href="#oferta" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">OFERTA EDUCATIVA</td></tr></table></paper-button></a>
+    <a href="#estudiantes" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">ESTUDIANTES</td></tr></table></paper-button></a>
+    <a href="http://www.cecyt3.ipn.mx/egresados/index.html"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">EGRESADOS</td></tr></table></paper-button></a>
+    <a href="http://www.cecyt3.ipn.mx/investigacion/index.html"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">INVESTIGACION</td></tr></table></paper-button></a>
+    <a href="http://www.cecyt3.ipn.mx/servicios/index.html"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">SERVICIOS</td></tr></table></paper-button></a>
+    <a href="http://www.cecyt3.ipn.mx/gestiondecalidad/index.html"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">CALIDAD</td></tr></table></paper-button></a>
+</div>
+</div>
+</div>
+<! ------>
+		<div data-role="panel" id="menu-con" data-position="left" data-display="overlay">
+		<div role="menu" class="ui-content">
+              <div id="top-b"></div>
+		<core-toolbar id="header1">
+      <a href="#menu">
+        <paper-icon-button icon="arrow-back" role="button" tabindex="0" aria-label="menu"></paper-icon-button>
+      </a>
+      <span flex="">CONOCENOS</span>
+      <a href="#" data-rel="close" data-position-to="window" data-transition="pop">
+        <paper-icon-button icon="close" role="button" tabindex="0" href="#info" aria-label="info"></paper-icon-button>
+      </a>               
+    </core-toolbar>
+<div id="pal-links">
+    <p>&nbsp;</p>
+		<a href="#historia" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="history"></core-icon></td><td align="center">HISTORIA</td></tr></table></paper-button></a>
+		<a href="#organigrama" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="account-circle"></core-icon></td><td align="center">ORGANIGRAMA</td></tr></table></paper-button></a>
+		<a href="#ubicacion" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="room"></core-icon></td><td align="center">UBICACION</td></tr></table></paper-button></a>
+		<a href="#galeria" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="perm-media"></core-icon></td><td align="center">GALERIA</td></tr></table></paper-button></a>
+</div>
+</div>
+</div>
+<! ------>
+        <div data-role="panel" id="oferta" data-position="left" data-display="overlay">
+		<div role="menu" class="ui-content">
+              <div id="top-b"></div>
+		<core-toolbar id="header1">
+      <a href="#menu">
+        <paper-icon-button icon="arrow-back" role="button" tabindex="0" aria-label="menu"></paper-icon-button>
+      </a>
+      <span flex="">OFERTA</span>
+      <a href="#" data-rel="close" data-position-to="window" data-transition="pop">
+        <paper-icon-button icon="close" role="button" tabindex="0" href="#info" aria-label="info"></paper-icon-button>
+      </a>               
+    </core-toolbar>
+<div id="pal-links">
+    <p>&nbsp;</p>
+		<a href="#digital" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">DIGITALES</td></tr></table></paper-button></a>
+		<a href="#computacion" data-transition="slidedown" data-rel="close"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">COMPUTACION</td></tr></table></paper-button></a>
+		<a href="#control" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">CONTROL</td></tr></table></paper-button></a>
+		<a href="#mac" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">MAC</td></tr></table></paper-button></a>
+        <a href="#aeronautica" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">AERONAUTICA</td></tr></table></paper-button></a>
+        <a href="#automotriz" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">AUTOMOTRIZ</td></tr></table></paper-button></a>
+		</div>
+            </div>
+</div>
+    <!-- /PANEL -->
+    </div>
+<!-- /Computacion-->
+<!-- /Carreras -->
+<!-- Estudiantes -->
+		<div data-role="page" id="estudiantes">
+			<div id="hist">
+			<div id="top-b"></div>
+    <core-toolbar id="header1">
+      <a href="#menu">
+        <paper-icon-button icon="menu" role="button" tabindex="0" aria-label="menu"></paper-icon-button>
+      </a>
+      <span flex="">Estudiantes</span>               
+    </core-toolbar>
+    <p>&nbsp;</p>
+				<div data-role="content">
+			<center>
+			<a href="http://www.cecyt3.ipn.mx/estudiantes/reposicion_de_credencial/reposicion_de_credencial.html" target="blank"><img src="imagenes/repcre.png"></a>
+			<p><a href="http://www.cecyt3.ipn.mx/estudiantes/examenSaberesAdquiridos/examendesaberespreviamenteadquirdos.html" target="blank"><img src="imagenes/exconpre.png"></a></p>
+			</center>
+			</div>
+		</div>
+<!-- PANEL -->
+  <div data-role="panel" id="menu" data-position="left" data-display="overlay">  
+          <div role="menu" class="ui-content">
+              <div id="top-b"></div>
+		<core-toolbar id="header1">
+      <a href="#main" data-rel="close">
+        <paper-icon-button icon="close" role="button" tabindex="0" aria-label="menu"></paper-icon-button>
+      </a>
+      <span flex="">MENU</span>
+          </core-toolbar>
+<div id="pal-links">
+    <p>&nbsp;</p>
+    <a href="#home" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">HOME</td></tr></table></paper-button></a>
+    <a href="#avisos" data-transition="slidedown" data-rel="close"><paper-button raised><table border=0><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">AVISOS</td></tr></table></paper-button></a>
+    <a href="#menu-con"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">CONOCENOS</td></tr></table></paper-button></a>
+    <a href="#oferta" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">OFERTA EDUCATIVA</td></tr></table></paper-button></a>
+    <a href="#estudiantes" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">ESTUDIANTES</td></tr></table></paper-button></a>
+    <a href="http://www.cecyt3.ipn.mx/egresados/index.html"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">EGRESADOS</td></tr></table></paper-button></a>
+    <a href="http://www.cecyt3.ipn.mx/investigacion/index.html"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">INVESTIGACION</td></tr></table></paper-button></a>
+    <a href="http://www.cecyt3.ipn.mx/servicios/index.html"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">SERVICIOS</td></tr></table></paper-button></a>
+    <a href="http://www.cecyt3.ipn.mx/gestiondecalidad/index.html"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">CALIDAD</td></tr></table></paper-button></a>
+</div>
+</div>
+</div>
+<! ------>
+		<div data-role="panel" id="menu-con" data-position="left" data-display="overlay">
+		<div role="menu" class="ui-content">
+              <div id="top-b"></div>
+		<core-toolbar id="header1">
+      <a href="#menu">
+        <paper-icon-button icon="arrow-back" role="button" tabindex="0" aria-label="menu"></paper-icon-button>
+      </a>
+      <span flex="">CONOCENOS</span>
+      <a href="#" data-rel="close" data-position-to="window" data-transition="pop">
+        <paper-icon-button icon="close" role="button" tabindex="0" href="#info" aria-label="info"></paper-icon-button>
+      </a>               
+    </core-toolbar>
+<div id="pal-links">
+    <p>&nbsp;</p>
+		<a href="#historia" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="history"></core-icon></td><td align="center">HISTORIA</td></tr></table></paper-button></a>
+		<a href="#organigrama" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="account-circle"></core-icon></td><td align="center">ORGANIGRAMA</td></tr></table></paper-button></a>
+		<a href="#ubicacion" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="room"></core-icon></td><td align="center">UBICACION</td></tr></table></paper-button></a>
+		<a href="#galeria" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="perm-media"></core-icon></td><td align="center">GALERIA</td></tr></table></paper-button></a>
+</div>
+</div>
+</div>
+<! ------>
+        <div data-role="panel" id="oferta" data-position="left" data-display="overlay">
+		<div role="menu" class="ui-content">
+              <div id="top-b"></div>
+		<core-toolbar id="header1">
+      <a href="#menu">
+        <paper-icon-button icon="arrow-back" role="button" tabindex="0" aria-label="menu"></paper-icon-button>
+      </a>
+      <span flex="">OFERTA</span>
+      <a href="#" data-rel="close" data-position-to="window" data-transition="pop">
+        <paper-icon-button icon="close" role="button" tabindex="0" href="#info" aria-label="info"></paper-icon-button>
+      </a>               
+    </core-toolbar>
+<div id="pal-links">
+    <p>&nbsp;</p>
+		<a href="#digital" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">DIGITALES</td></tr></table></paper-button></a>
+		<a href="#computacion" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">COMPUTACION</td></tr></table></paper-button></a>
+		<a href="#control" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">CONTROL</td></tr></table></paper-button></a>
+		<a href="#mac" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">MAC</td></tr></table></paper-button></a>
+        <a href="#aeronautica" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">AERONAUTICA</td></tr></table></paper-button></a>
+        <a href="#automotriz" data-transition="slidedown"><paper-button raised><table><tr><td><core-icon icon="arrow-forward"></core-icon></td><td align="center">AUTOMOTRIZ</td></tr></table></paper-button></a>
+		</div>
+            </div>
+</div>
+    <!-- /PANEL -->
+</div>
+<!-- /Estudiantes -->
+    
+      
 </body></html>
