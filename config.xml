@@ -19,7 +19,7 @@
         Madness Programmer
     </author>
 
-<icon src="CCYT3-512.png" />
+<icon src="CCYT3app.png" />
 
 <supports-screens android:anyDensity="true" android:resizeable="true" 
     android:smallScreens="true" 
