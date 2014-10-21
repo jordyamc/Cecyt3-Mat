@@ -14,6 +14,8 @@
 <link rel="import" href="components/core-overlay/core-overlay.html">
 <link rel="import" href="components/core-menu/core-menu.html">
 <link rel="import" href="components/paper-button/paper-button.html">
+<link rel="import" href="components/paper-input/paper-input.html">
+<link rel="import" href="components/core-input/core-input.html">
 <script src="jquery-1.9.1.min.js"></script>
 <script src="mobile/1.4.3/jquery.mobile-1.4.3.min.js"></script><!-- Uncomment the following to include cordova in your android project --><!--<script src="http://jqmdesigner.appspot.com/platforms/android/cordova.js"></script>--><!-- Export JS  -->
 <script src="scripts.js"></script>
@@ -901,7 +903,9 @@
     <!-- /PANEL -->
     </div>
 <!-- /Computacion-->
+
 <!-- /Carreras -->
+
 <!-- Estudiantes -->
 		<div data-role="page" id="estudiantes">
 			<div id="hist">
@@ -993,6 +997,13 @@
     <!-- /PANEL -->
 </div>
 <!-- /Estudiantes -->
+
+<!-- Pruebas -->
+    <div data-role="page" id="pruebas">
+        <form name="aye" onSubmit="return handleClick()">
+                <input type="text" name="whichThing" value="" placeholder="Codigo">
+    </form>
+    </div>
     
       
 </body></html>

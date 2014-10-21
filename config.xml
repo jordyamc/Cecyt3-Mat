@@ -1,0 +1,36 @@
+<widget xmlns       = "http://www.w3.org/ns/widgets"
+    xmlns:gap       = "http://phonegap.com/ns/1.0"
+    xmlns:android   = "http://schemas.android.com/apk/res/android"
+    id              = "com.cecyt3.mobile.beta"
+    version         = "1.0">
+
+<name>Cecyt3</name>
+
+    <description>
+        Cecyt3 Mobile (BETA)
+    </description>
+
+<preference name="phonegap-version" value="3.6.3" />
+<preference name="orientation" value="portrait" />
+<preference name="permissions" value="none"/>
+<preference name="android-installLocation" value="auto" />
+
+    <author href="http://cecyt3-mobile.hol.es/" email="jordyamc@hotmil.com">
+        Madness Programmer
+    </author>
+
+<icon src="CCYT3-512.png" />
+
+<supports-screens android:anyDensity="true" android:resizeable="true" 
+    android:smallScreens="true" 
+    android:normalScreens="true" 
+    android:largeScreens="true" 
+    android:xlargeScreens="true" />
+
+<gap:platform name="android" />
+<gap:plugin name="org.apache.cordova.statusbar" version="0.1.4" />
+<preference name="StatusBarOverlaysWebView" value="true" />
+<preference name="StatusBarBackgroundColor" value="#6C1C41" />
+
+
+</widget>
